@@ -1,0 +1,2498 @@
+{
+  "resources": [],
+  "references": {
+    "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=OECD.CFE.EDS:DSD_FUA_CLIM@DF_LAND_TEMP(1.2)": {
+      "id": "DSD_FUA_CLIM@DF_LAND_TEMP",
+      "name": "Land surface temperature -  Cities and FUAs",
+      "description": "<p style=\"text-align: justify;\">This dataset provides sub-national indicators on land surface temperature in FUAs and Cities.</p>\n\n<h3>Data sources and methodology</h3>\n<p style=\"text-align: justify;\">Land surface temperature refers to the average temperature of the land surface within a local area, excluding water bodies. Data are available for both daytime and nighttime, as well as annually and by season (summer and winter). These temperatures are derived from MODIS Aqua and Terra satellite observations, which offer high-frequency measurements at a spatial resolution of 1 km.</p>\n\n<h3>Defining FUAs and cities</h3>\n<p align=\"justify\">The OECD, in cooperation with the EU, has developed a harmonised <a href=\"https://www.oecd.org/en/data/datasets/oecd-definition-of-cities-and-functional-urban-areas.html\">definition of functional urban areas</a> (FUAs) to capture the economic and functional reach of cities based on daily commuting patterns <a href=https://doi.org/10.1787/9789264174108-en>(OECD, 2012)</a>. FUAs consist of:\n<ol>\n  <li><b>A city</b> – defined by urban centres in the degree of urbanisation, adapted to the closest local administrative units to define a city.</li>\n  <li><b>A commuting zone</b> – including all local areas where at least 15% of employed residents work in the city.</li>\n</ol>\nThe delineation process includes:\n<ul>\n  <li>Assigning municipalities surrounded by a single FUA to that FUA.</li>\n  <li>Excluding non-contiguous municipalities.</li>\n</ul>\nThe definition identifies 1 285 FUAs and 1 402 cities in all OECD member countries except Costa Rica and three accession countries.</p>\n\n<h3>Cite this dataset</h3>\n<p>OECD Regions, cities and local areas database (<a href=http://data-explorer.oecd.org/s/1ve>Land surface temperature -  Cities and FUAs</a>), <a href=http://oe.cd/geostats>http://oe.cd/geostats</a></p>\n\n<h3>Further information</h3>\n<ul> \n<li> <a href=https://localdataportal.oecd.org/>OECD Local Data Portal </a> </li>\n<li> <a href=https://www.oecd.org/en/publications/oecd-regions-and-cities-at-a-glance-2024_f42db3bf-en.html/>OECD Regions and Cities at a Glance </a> </li>\n</ul>\n<p align=\"justify\">For questions and/or comments, please email  <a href=\"mailto:CitiesStat@oecd.org\">CitiesStat@oecd.org</a>",
+      "agencyID": "OECD.CFE.EDS",
+      "version": "1.2",
+      "isFinal": true,
+      "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=OECD.CFE.EDS:DSD_FUA_CLIM@DF_LAND_TEMP(1.2)",
+      "annotations": [
+        {
+          "type": "NonProductionDataflow",
+          "text": "true"
+        },
+        {
+          "id": "@SDMX",
+          "title": "REF_AREA,TERRITORIAL_LEVEL",
+          "type": "LAYOUT_ROW"
+        },
+        {
+          "id": "@SDMX",
+          "title": "TIME_PERIOD",
+          "type": "LAYOUT_COLUMN"
+        },
+        {
+          "id": "@SDMX",
+          "title": "MEASURE",
+          "type": "LAYOUT_ROW_SECTION"
+        },
+        {
+          "id": "@SDMX",
+          "title": "OBS_STATUS=A,FREQ=A,UNIT_MULT=0",
+          "type": "NOT_DISPLAYED"
+        },
+        {
+          "id": "@SDMX",
+          "title": "REF_AREA=BEL+BE001F+BE002F+BE003F+BE004F+BE001C+BE002C+BE003C+BE004C+NLD+NL001F+NL002F+NL003F+NL004F+NL001C+NL002C+NL003C+NL004C,UNIT_MEASURE=C,MEASURE=DAY_LAND_TEMP_YEARLY,TIME_PERIOD_START=2019",
+          "type": "DEFAULT"
+        }
+      ],
+      "structure": {
+        "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=OECD.CFE.EDS:DSD_FUA_CLIM(1.2)"
+      }
+    },
+    "urn:sdmx:org.sdmx.infomodel.categoryscheme.CategoryScheme=OECD:OECDCS1(5.3)": {
+      "id": "OECDCS1",
+      "name": "Topic",
+      "description": "The main OECD category scheme",
+      "agencyID": "OECD",
+      "version": "5.3",
+      "isFinal": true,
+      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.CategoryScheme=OECD:OECDCS1(5.3)",
+      "items": [
+        {
+          "id": "AGR",
+          "name": "Agriculture and fisheries",
+          "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).AGR",
+          "annotations": [
+            {
+              "type": "ORDER",
+              "text": "35"
+            }
+          ],
+          "items": [
+            {
+              "id": "AGR_TRD",
+              "name": "Agricultural trade and markets",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).AGR.AGR_TRD",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "47"
+                }
+              ],
+              "items": [
+                {
+                  "id": "AGR_TRD_MRK",
+                  "name": "Agricultural market information system (AMIS)",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).AGR.AGR_TRD.AGR_TRD_MRK",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "59"
+                    }
+                  ]
+                },
+                {
+                  "id": "AGR_TRD_OUT",
+                  "name": "Agricultural market outlook (OECD-FAO agricultural outlook)",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).AGR.AGR_TRD.AGR_TRD_OUT",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "74"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "AGR_FDS",
+              "name": "Food systems",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).AGR.AGR_FDS",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "90"
+                }
+              ]
+            },
+            {
+              "id": "AGR_ENS",
+              "name": "Agriculture and environmental sustainability",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).AGR.AGR_ENS",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "103"
+                }
+              ]
+            },
+            {
+              "id": "AGR_OCD",
+              "name": "OECD standards for Agriculture",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).AGR.AGR_OCD",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "117"
+                }
+              ],
+              "items": [
+                {
+                  "id": "AGR_OCD_FRV",
+                  "name": "Fruits and vegetables",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).AGR.AGR_OCD.AGR_OCD_FRV",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "129"
+                    }
+                  ]
+                },
+                {
+                  "id": "AGR_OCD_SED",
+                  "name": "Seeds",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).AGR.AGR_OCD.AGR_OCD_SED",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "142"
+                    }
+                  ]
+                },
+                {
+                  "id": "AGR_OCD_TRC",
+                  "name": "Tractors",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).AGR.AGR_OCD.AGR_OCD_TRC",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "155"
+                    }
+                  ]
+                },
+                {
+                  "id": "AGR_OCD_FRP",
+                  "name": "Forest and plant",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).AGR.AGR_OCD.AGR_OCD_FRP",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "168"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "AGR_PRD",
+              "name": "Agricultural productivity and innovation",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).AGR.AGR_PRD",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "182"
+                }
+              ]
+            },
+            {
+              "id": "AGR_PLM",
+              "name": "Agricultural policy monitoring",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).AGR.AGR_PLM",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "195"
+                }
+              ]
+            },
+            {
+              "id": "AGR_FSA",
+              "name": "Fisheries and aquaculture",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).AGR.AGR_FSA",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "208"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "DEV",
+          "name": "Development",
+          "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).DEV",
+          "annotations": [
+            {
+              "type": "ORDER",
+              "text": "222"
+            }
+          ],
+          "items": [
+            {
+              "id": "DEV_RES",
+              "name": "Development resource flows",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).DEV.DEV_RES",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "234"
+                }
+              ]
+            },
+            {
+              "id": "DEV_ODA",
+              "name": "Official Development Assistance (ODA)",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).DEV.DEV_ODA",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "247"
+                }
+              ],
+              "items": [
+                {
+                  "id": "DEV_ODA_ELI",
+                  "name": "Eligibility and conditions",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).DEV.DEV_ODA.DEV_ODA_ELI",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "252"
+                    }
+                  ]
+                },
+                {
+                  "id": "DEV_ODA_FPV",
+                  "name": "Flows by provider",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).DEV.DEV_ODA.DEV_ODA_FPV",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "259"
+                    }
+                  ]
+                },
+                {
+                  "id": "DEV_ODA_FPR",
+                  "name": "Flows by provider and recipient",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).DEV.DEV_ODA.DEV_ODA_FPR",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "272"
+                    }
+                  ]
+                },
+                {
+                  "id": "DEV_ODA_FIP",
+                  "name": "Flows on individual projects (CRS)",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).DEV.DEV_ODA.DEV_ODA_FIP",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "285"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "DEV_KII",
+              "name": "Key indicators of informality (KIIbIH)",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).DEV.DEV_KII",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "299"
+                }
+              ]
+            },
+            {
+              "id": "DEV_F",
+              "name": "Africa",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).DEV.DEV_F",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "310"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ECO",
+          "name": "Economy",
+          "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO",
+          "annotations": [
+            {
+              "type": "ORDER",
+              "text": "314"
+            }
+          ],
+          "items": [
+            {
+              "id": "ECO_COM",
+              "name": "Competition",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_COM",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "320"
+                }
+              ]
+            },
+            {
+              "id": "ECO_COR",
+              "name": "Corporate sector",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_COR",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "326"
+                }
+              ]
+            },
+            {
+              "id": "ECO_EXT",
+              "name": "External sector",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_EXT",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "339"
+                }
+              ],
+              "items": [
+                {
+                  "id": "ECO_EXT_FDI",
+                  "name": "Foreign direct investment (FDI)",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_EXT.ECO_EXT_FDI",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "351"
+                    }
+                  ],
+                  "items": [
+                    {
+                      "id": "ECO_EXT_FDI_FIF",
+                      "name": "FDI financial flows",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_EXT.ECO_EXT_FDI.ECO_EXT_FDI_FIF",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "363"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ECO_EXT_FDI_INC",
+                      "name": "FDI income",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_EXT.ECO_EXT_FDI.ECO_EXT_FDI_INC",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "376"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ECO_EXT_FDI_POS",
+                      "name": "FDI positions",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_EXT.ECO_EXT_FDI.ECO_EXT_FDI_POS",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "389"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "ECO_EXT_BAL",
+                  "name": "Balance of payments and international investment position",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_EXT.ECO_EXT_BAL",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "403"
+                    }
+                  ]
+                },
+                {
+                  "id": "ECO_EXT_TGS",
+                  "name": "Trade in goods and services",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_EXT.ECO_EXT_TGS",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "418"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "ECO_LEA",
+              "name": "Leading indicators and tendency surveys",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_LEA",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "432"
+                }
+              ]
+            },
+            {
+              "id": "ECO_PRI",
+              "name": "Prices",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_PRI",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "446"
+                }
+              ]
+            },
+            {
+              "id": "ECO_PRO",
+              "name": "Productivity",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_PRO",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "459"
+                }
+              ]
+            },
+            {
+              "id": "ECO_OUT",
+              "name": "Economic outlook",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_OUT",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "472"
+                }
+              ]
+            },
+            {
+              "id": "ECO_NAD",
+              "name": "National accounts",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "485"
+                }
+              ],
+              "items": [
+                {
+                  "id": "ECO_NAD_GNF",
+                  "name": "GDP and non-financial accounts",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_GNF",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "497"
+                    }
+                  ],
+                  "items": [
+                    {
+                      "id": "ECO_NAD_GNF_GDP",
+                      "name": "GDP and components",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_GNF.ECO_NAD_GNF_GDP",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "509"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ECO_NAD_GNF_NAT",
+                      "name": "National Accounts at a Glance",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_GNF.ECO_NAD_GNF_NAT",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "522"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ECO_NAD_GNF_HSH",
+                      "name": "Household indicators dashboard",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_GNF.ECO_NAD_GNF_HSH",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "535"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ECO_NAD_GNF_INC",
+                      "name": "Income, consumption, saving and borrowing",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_GNF.ECO_NAD_GNF_INC",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "549"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ECO_NAD_GNF_PRD",
+                      "name": "Production, employment and investment",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_GNF.ECO_NAD_GNF_PRD",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "564"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ECO_NAD_GNF_PNS",
+                      "name": "Pensions",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_GNF.ECO_NAD_GNF_PNS",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "579"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ECO_NAD_GNF_NFA",
+                      "name": "Non-financial accounts including sector accounts",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_GNF.ECO_NAD_GNF_NFA",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "592"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "ECO_NAD_GFD",
+                  "name": "Government finances and public sector debt",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_GFD",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "608"
+                    }
+                  ],
+                  "items": [
+                    {
+                      "id": "ECO_NAD_GFD_GNF",
+                      "name": "Government non-financial accounts",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_GFD.ECO_NAD_GFD_GNF",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "622"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ECO_NAD_GFD_GFA",
+                      "name": "Government financial accounts and balance sheets",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_GFD.ECO_NAD_GFD_GFA",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "636"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ECO_NAD_GFD_PSD",
+                      "name": "Public sector debt",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_GFD.ECO_NAD_GFD_PSD",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "651"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "ECO_NAD_FBS",
+                  "name": "Financial accounts and balance sheets",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_FBS",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "665"
+                    }
+                  ],
+                  "items": [
+                    {
+                      "id": "ECO_NAD_FBS_FID",
+                      "name": "Financial indicators dashboard",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_FBS.ECO_NAD_FBS_FID",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "678"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ECO_NAD_FBS_FAC",
+                      "name": "Financial accounts",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_FBS.ECO_NAD_FBS_FAC",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "692"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ECO_NAD_FBS_FBS",
+                      "name": "Financial balance sheets",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_FBS.ECO_NAD_FBS_FBS",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "705"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ECO_NAD_FBS_FWM",
+                      "name": "From whom-to-whom matrices",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_FBS.ECO_NAD_FBS_FWM",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "718"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ECO_NAD_FBS_IIH",
+                      "name": "Institutional investors and households",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_FBS.ECO_NAD_FBS_IIH",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "731"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ECO_NAD_FBS_PNS",
+                      "name": "Pensions",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_FBS.ECO_NAD_FBS_PNS",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "746"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "ECO_NAD_SUT",
+                  "name": "Supply and use tables",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_SUT",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "760"
+                    }
+                  ],
+                  "items": [
+                    {
+                      "id": "ECO_NAD_SUT_SUT",
+                      "name": "Supply and use",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_SUT.ECO_NAD_SUT_SUT",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "773"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ECO_NAD_SUT_VM",
+                      "name": "Valuation matrices",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_SUT.ECO_NAD_SUT_VM",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "786"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ECO_NAD_SUT_IND",
+                      "name": "Indicators",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_NAD.ECO_NAD_SUT.ECO_NAD_SUT_IND",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "799"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "ECO_STS",
+              "name": "Short-term economic statistics",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_STS",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "814"
+                }
+              ]
+            },
+            {
+              "id": "ECO_GEO",
+              "name": "Subnational economy",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ECO.ECO_GEO",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "827"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "EDU",
+          "name": "Education and skills",
+          "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).EDU",
+          "annotations": [
+            {
+              "type": "ORDER",
+              "text": "841"
+            }
+          ],
+          "items": [
+            {
+              "id": "EDU_ATT",
+              "name": "Education attainment",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).EDU.EDU_ATT",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "853"
+                }
+              ]
+            },
+            {
+              "id": "EDU_RES",
+              "name": "Education resources",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).EDU.EDU_RES",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "866"
+                }
+              ]
+            },
+            {
+              "id": "EDU_PISA",
+              "name": "International student assessment (PISA)",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).EDU.EDU_PISA",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "879"
+                }
+              ]
+            },
+            {
+              "id": "EDU_STU",
+              "name": "Students",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).EDU.EDU_STU",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "893"
+                }
+              ]
+            },
+            {
+              "id": "EDU_TEA",
+              "name": "Teachers",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).EDU.EDU_TEA",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "906"
+                }
+              ]
+            },
+            {
+              "id": "EDU_YOU",
+              "name": "Youth and the labour market",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).EDU.EDU_YOU",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "919"
+                }
+              ]
+            },
+            {
+              "id": "EDU_GEO",
+              "name": "Subnational education indicators",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).EDU.EDU_GEO",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "932"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ENV",
+          "name": "Environment and climate change",
+          "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ENV",
+          "annotations": [
+            {
+              "type": "ORDER",
+              "text": "946"
+            }
+          ],
+          "items": [
+            {
+              "id": "ENV_AC",
+              "name": "Air and climate",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ENV.ENV_AC",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "958"
+                }
+              ]
+            },
+            {
+              "id": "ENV_BIO",
+              "name": "Biodiversity, water and ecosystems",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ENV.ENV_BIO",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "971"
+                }
+              ],
+              "items": [
+                {
+                  "id": "ENV_BIO_BIO",
+                  "name": "Biodiversity",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ENV.ENV_BIO.ENV_BIO_BIO",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "983"
+                    }
+                  ]
+                },
+                {
+                  "id": "ENV_BIO_OCN",
+                  "name": "Ocean",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ENV.ENV_BIO.ENV_BIO_OCN",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "996"
+                    }
+                  ]
+                },
+                {
+                  "id": "ENV_BIO_WAT",
+                  "name": "Water",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ENV.ENV_BIO.ENV_BIO_WAT",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "1009"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "ENV_NRG",
+              "name": "Energy",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ENV.ENV_NRG",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1023"
+                }
+              ]
+            },
+            {
+              "id": "ENV_POL",
+              "name": "Environmental policy",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ENV.ENV_POL",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1036"
+                }
+              ]
+            },
+            {
+              "id": "ENV_GRG",
+              "name": "Green growth",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ENV.ENV_GRG",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1049"
+                }
+              ]
+            },
+            {
+              "id": "ENV_FOR",
+              "name": "Land and forest",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ENV.ENV_FOR",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1062"
+                }
+              ]
+            },
+            {
+              "id": "ENV_PLS",
+              "name": "Plastics",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ENV.ENV_PLS",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1070"
+                }
+              ]
+            },
+            {
+              "id": "ENV_REC",
+              "name": "Resource efficiency and circular economy",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ENV.ENV_REC",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1075"
+                }
+              ],
+              "items": [
+                {
+                  "id": "ENV_REC_MAT",
+                  "name": "Material resources",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ENV.ENV_REC.ENV_REC_MAT",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "1088"
+                    }
+                  ]
+                },
+                {
+                  "id": "ENV_REC_WAS",
+                  "name": "Waste management",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ENV.ENV_REC.ENV_REC_WAS",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "1101"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "ENV_TEC",
+              "name": "Technology and innovation",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).ENV.ENV_TEC",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1128"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "FIN",
+          "name": "Finance and investment",
+          "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).FIN",
+          "annotations": [
+            {
+              "type": "ORDER",
+              "text": "1142"
+            }
+          ],
+          "items": [
+            {
+              "id": "FIN_CR",
+              "name": "Conversion rates",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).FIN.FIN_CR",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1154"
+                }
+              ]
+            },
+            {
+              "id": "FIN_IR",
+              "name": "Interest rates",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).FIN.FIN_IR",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1167"
+                }
+              ]
+            },
+            {
+              "id": "FIN_MON",
+              "name": "Monetary aggregates",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).FIN.FIN_MON",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1180"
+                }
+              ]
+            },
+            {
+              "id": "FIN_PIN",
+              "name": "Pensions and insurance",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).FIN.FIN_PIN",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1193"
+                }
+              ],
+              "items": [
+                {
+                  "id": "FIN_PIN_PEN",
+                  "name": "Pensions",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).FIN.FIN_PIN.FIN_PIN_PEN",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "1205"
+                    }
+                  ]
+                },
+                {
+                  "id": "FIN_PIN_INS",
+                  "name": "Insurance",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).FIN.FIN_PIN.FIN_PIN_INS",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "1218"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "FIN_FDI",
+              "name": "Foreign direct investment (FDI)",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).FIN.FIN_FDI",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1232"
+                }
+              ],
+              "items": [
+                {
+                  "id": "FIN_FDI_FIF",
+                  "name": "FDI financial flows",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).FIN.FIN_FDI.FIN_FDI_FIF",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "1244"
+                    }
+                  ]
+                },
+                {
+                  "id": "FIN_FDI_INC",
+                  "name": "FDI income",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).FIN.FIN_FDI.FIN_FDI_INC",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "1257"
+                    }
+                  ]
+                },
+                {
+                  "id": "FIN_FDI_POS",
+                  "name": "FDI positions",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).FIN.FIN_FDI.FIN_FDI_POS",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "1270"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "GOV",
+          "name": "Public governance",
+          "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GOV",
+          "annotations": [
+            {
+              "type": "ORDER",
+              "text": "1285"
+            }
+          ],
+          "items": [
+            {
+              "id": "GOV_TRD",
+              "name": "Trust, public services and prosperity",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GOV.GOV_TRD",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1291"
+                }
+              ]
+            },
+            {
+              "id": "GOV_ACI",
+              "name": "Anti-corruption and integrity",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GOV.GOV_ACI",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1294"
+                }
+              ]
+            },
+            {
+              "id": "GOV_REG",
+              "name": "Regulation",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GOV.GOV_REG",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1297"
+                }
+              ]
+            },
+            {
+              "id": "GOV_PFB",
+              "name": "Public finance and budgets",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GOV.GOV_PFB",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1310"
+                }
+              ],
+              "items": [
+                {
+                  "id": "GOV_PF",
+                  "name": "Public finance",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GOV.GOV_PFB.GOV_PF",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "1323"
+                    }
+                  ]
+                },
+                {
+                  "id": "GOV_BP",
+                  "name": "Budget practices",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GOV.GOV_PFB.GOV_BP",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "1336"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "GOV_PPR",
+              "name": "Public procurement and infrastructure",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GOV.GOV_PPR",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1350"
+                }
+              ]
+            },
+            {
+              "id": "GOV_OID",
+              "name": "Openness, innovation and digital government",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GOV.GOV_OID",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1363"
+                }
+              ]
+            },
+            {
+              "id": "GOV_IR",
+              "name": "Inclusion and representation",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GOV.GOV_IR",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1378"
+                }
+              ]
+            },
+            {
+              "id": "GOV_PEM",
+              "name": "Public employment and management",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GOV.GOV_PEM",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1391"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "HEA",
+          "name": "Health",
+          "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).HEA",
+          "annotations": [
+            {
+              "type": "ORDER",
+              "text": "1405"
+            }
+          ],
+          "items": [
+            {
+              "id": "HEA_EXP",
+              "name": "Health expenditure and financing",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).HEA.HEA_EXP",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1417"
+                }
+              ]
+            },
+            {
+              "id": "HEA_STA",
+              "name": "Health status",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).HEA.HEA_STA",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1430"
+                }
+              ]
+            },
+            {
+              "id": "HEA_RIS",
+              "name": "Risk factors for health",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).HEA.HEA_RIS",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1443"
+                }
+              ]
+            },
+            {
+              "id": "HEA_RES",
+              "name": "Healthcare human resources",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).HEA.HEA_RES",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1456"
+                }
+              ]
+            },
+            {
+              "id": "HEA_PRE",
+              "name": "Healthcare provider resources",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).HEA.HEA_PRE",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1465"
+                }
+              ]
+            },
+            {
+              "id": "HEA_PRC",
+              "name": "Healthcare use",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).HEA.HEA_PRC",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1469"
+                }
+              ]
+            },
+            {
+              "id": "HEA_HCQ",
+              "name": "Healthcare quality and outcomes",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).HEA.HEA_HCQ",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1483"
+                }
+              ]
+            },
+            {
+              "id": "HEA_PHM",
+              "name": "Pharmaceutical market",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).HEA.HEA_PHM",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1496"
+                }
+              ]
+            },
+            {
+              "id": "HEA_COV",
+              "name": "Healthcare coverage",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).HEA.HEA_COV",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1509"
+                }
+              ]
+            },
+            {
+              "id": "HEA_LTC",
+              "name": "Long-term care",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).HEA.HEA_LTC",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1515"
+                }
+              ]
+            },
+            {
+              "id": "HEA_GEO",
+              "name": "Subnational health indicators",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).HEA.HEA_GEO",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1522"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "STI",
+          "name": "Industry, business and entrepreneurship",
+          "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).STI",
+          "annotations": [
+            {
+              "type": "ORDER",
+              "text": "1536"
+            }
+          ],
+          "items": [
+            {
+              "id": "STI_ENT",
+              "name": "SMEs and entrepreneurship",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).STI.STI_ENT",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1548"
+                }
+              ]
+            },
+            {
+              "id": "STI_IND",
+              "name": "Industry dynamics and globalisation",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).STI.STI_IND",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1561"
+                }
+              ],
+              "items": [
+                {
+                  "id": "STI_IND_DYN",
+                  "name": "Industry structure and dynamics",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).STI.STI_IND.STI_IND_DYN",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "1573"
+                    }
+                  ]
+                },
+                {
+                  "id": "STI_IND_GLB",
+                  "name": "Globalisation of industry",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).STI.STI_IND.STI_IND_GLB",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "1586"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "STI_IBP",
+              "name": "Industry, business and entrepreneurship policy",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).STI.STI_IBP",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1600"
+                }
+              ],
+              "items": [
+                {
+                  "id": "STI_ENT_POL",
+                  "name": "SMEs and entrepreneurship policies",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).STI.STI_IBP.STI_ENT_POL",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "1614"
+                    }
+                  ]
+                },
+                {
+                  "id": "STI_IND_POL",
+                  "name": "Industrial policy",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).STI.STI_IBP.STI_IND_POL",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "1627"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "STI_CUL",
+              "name": "Culture, creative industries and sports",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).STI.STI_CUL",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1641"
+                }
+              ]
+            },
+            {
+              "id": "STI_TOR",
+              "name": "Tourism",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).STI.STI_TOR",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1654"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "INT",
+          "name": "Science, technology and innovation",
+          "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).INT",
+          "annotations": [
+            {
+              "type": "ORDER",
+              "text": "1668"
+            }
+          ],
+          "items": [
+            {
+              "id": "INT_ICT",
+              "name": "Information and communication technology (ICT)",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).INT.INT_ICT",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1680"
+                }
+              ]
+            },
+            {
+              "id": "INT_KEY",
+              "name": "Key science and technology indicators",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).INT.INT_KEY",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1695"
+                }
+              ]
+            },
+            {
+              "id": "INT_RD",
+              "name": "Research and development (R&D)",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).INT.INT_RD",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1709"
+                }
+              ]
+            },
+            {
+              "id": "INT_PUB",
+              "name": "Innovation and R&D policy",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).INT.INT_PUB",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1722"
+                }
+              ]
+            },
+            {
+              "id": "INT_DIG",
+              "name": "Digital economy",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).INT.INT_DIG",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1736"
+                }
+              ],
+              "items": [
+                {
+                  "id": "INT_DIG_POL",
+                  "name": "Digital economy policies",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).INT.INT_DIG.INT_DIG_POL",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "1748"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "INT_BIB",
+              "name": "Bibliometric indicators",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).INT.INT_BIB",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1762"
+                }
+              ]
+            },
+            {
+              "id": "INT_PRP",
+              "name": "Intellectual property",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).INT.INT_PRP",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1775"
+                }
+              ],
+              "items": [
+                {
+                  "id": "INT_PRP_PAT",
+                  "name": "Patents",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).INT.INT_PRP.INT_PRP_PAT",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "1787"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "JOB",
+          "name": "Employment",
+          "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).JOB",
+          "annotations": [
+            {
+              "type": "ORDER",
+              "text": "1802"
+            }
+          ],
+          "items": [
+            {
+              "id": "JOB_BW",
+              "name": "Benefits, earnings and wages",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).JOB.JOB_BW",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1814"
+                }
+              ]
+            },
+            {
+              "id": "JOB_EMP",
+              "name": "Employment indicators",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).JOB.JOB_EMP",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1827"
+                }
+              ]
+            },
+            {
+              "id": "JOB_UNEMP",
+              "name": "Unemployment indicators",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).JOB.JOB_UNEMP",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1840"
+                }
+              ]
+            },
+            {
+              "id": "JOB_GEO",
+              "name": "Subnational jobs",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).JOB.JOB_GEO",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1853"
+                }
+              ]
+            },
+            {
+              "id": "JOB_PRT",
+              "name": "Employment protection",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).JOB.JOB_PRT",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1867"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "SOC",
+          "name": "Society",
+          "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).SOC",
+          "annotations": [
+            {
+              "type": "ORDER",
+              "text": "1881"
+            }
+          ],
+          "items": [
+            {
+              "id": "SOC_AGE",
+              "name": "Ageing",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).SOC.SOC_AGE",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1893"
+                }
+              ]
+            },
+            {
+              "id": "SOC_DEM",
+              "name": "Demography",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).SOC.SOC_DEM",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1906"
+                }
+              ]
+            },
+            {
+              "id": "SOC_INE",
+              "name": "Inclusion and equality",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).SOC.SOC_INE",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1919"
+                }
+              ]
+            },
+            {
+              "id": "SOC_MIG",
+              "name": "Migration",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).SOC.SOC_MIG",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1932"
+                }
+              ]
+            },
+            {
+              "id": "SOC_POP",
+              "name": "Population by region",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).SOC.SOC_POP",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1945"
+                }
+              ]
+            },
+            {
+              "id": "SOC_PRO",
+              "name": "Social policy",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).SOC.SOC_PRO",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1958"
+                }
+              ]
+            },
+            {
+              "id": "SOC_WEL",
+              "name": "Well-being and beyond GDP",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).SOC.SOC_WEL",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1971"
+                }
+              ]
+            },
+            {
+              "id": "SOC_POL",
+              "name": "Consumer policy",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).SOC.SOC_POL",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "1984"
+                }
+              ],
+              "items": [
+                {
+                  "id": "SOC_POL_DGT",
+                  "name": "Digital transformation",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).SOC.SOC_POL.SOC_POL_DGT",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "1996"
+                    }
+                  ]
+                },
+                {
+                  "id": "SOC_POL_SUS",
+                  "name": "Sustainable consumption",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).SOC.SOC_POL.SOC_POL_SUS",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2009"
+                    }
+                  ]
+                },
+                {
+                  "id": "SOC_POL_PSF",
+                  "name": "Product safety",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).SOC.SOC_POL.SOC_POL_PSF",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2022"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "SOC_GEN",
+              "name": "Gender equality",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).SOC.SOC_GEN",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2036"
+                }
+              ]
+            },
+            {
+              "id": "SOC_GEO",
+              "name": "Subnational social indicators",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).SOC.SOC_GEO",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2049"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "GEO",
+          "name": "Regional, rural and urban development",
+          "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GEO",
+          "annotations": [
+            {
+              "type": "ORDER",
+              "text": "2063"
+            }
+          ],
+          "items": [
+            {
+              "id": "GEO_SNG",
+              "name": "Subnational government finance and employment",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GEO.GEO_SNG",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2075"
+                }
+              ]
+            },
+            {
+              "id": "GEO_REG",
+              "name": "Regions",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GEO.GEO_REG",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2090"
+                }
+              ],
+              "items": [
+                {
+                  "id": "GEO_REG_ECO",
+                  "name": "Regional economy",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GEO.GEO_REG.GEO_REG_ECO",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2102"
+                    }
+                  ]
+                },
+                {
+                  "id": "GEO_REG_EDU",
+                  "name": "Regional education",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GEO.GEO_REG.GEO_REG_EDU",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2115"
+                    }
+                  ]
+                },
+                {
+                  "id": "GEO_REG_NRG",
+                  "name": "Regional energy",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GEO.GEO_REG.GEO_REG_NRG",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2128"
+                    }
+                  ]
+                },
+                {
+                  "id": "GEO_REG_ENT",
+                  "name": "Regional entrepreneurship",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GEO.GEO_REG.GEO_REG_ENT",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2135"
+                    }
+                  ]
+                },
+                {
+                  "id": "GEO_REG_ENV",
+                  "name": "Regional environment and climate change",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GEO.GEO_REG.GEO_REG_ENV",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2141"
+                    }
+                  ]
+                },
+                {
+                  "id": "GEO_REG_GEN",
+                  "name": "Regional gender equality",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GEO.GEO_REG.GEO_REG_GEN",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2154"
+                    }
+                  ]
+                },
+                {
+                  "id": "GEO_REG_HEA",
+                  "name": "Regional health",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GEO.GEO_REG.GEO_REG_HEA",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2167"
+                    }
+                  ]
+                },
+                {
+                  "id": "GEO_REG_INT",
+                  "name": "Regional innovation and technology",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GEO.GEO_REG.GEO_REG_INT",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2180"
+                    }
+                  ]
+                },
+                {
+                  "id": "GEO_REG_JOB",
+                  "name": "Regional jobs",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GEO.GEO_REG.GEO_REG_JOB",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2193"
+                    }
+                  ]
+                },
+                {
+                  "id": "GEO_REG_DIS",
+                  "name": "Regional disparities",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GEO.GEO_REG.GEO_REG_DIS",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2206"
+                    }
+                  ]
+                },
+                {
+                  "id": "GEO_REG_SOC",
+                  "name": "Regional society",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GEO.GEO_REG.GEO_REG_SOC",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2219"
+                    }
+                  ]
+                },
+                {
+                  "id": "GEO_REG_TRA",
+                  "name": "Regional transport and accessibility",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GEO.GEO_REG.GEO_REG_TRA",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2232"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "GEO_URB",
+              "name": "Cities and functional urban areas",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GEO.GEO_URB",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2246"
+                }
+              ],
+              "links": [
+                {
+                  "href": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=OECD.CFE.EDS:DSD_FUA_CLIM@DF_LAND_TEMP(1.2)",
+                  "rel": "dataflow"
+                }
+              ]
+            },
+            {
+              "id": "GEO_MUN",
+              "name": "Municipalities and local areas",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).GEO.GEO_MUN",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2259"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "TRD",
+          "name": "Trade",
+          "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD",
+          "annotations": [
+            {
+              "type": "ORDER",
+              "text": "2273"
+            }
+          ],
+          "items": [
+            {
+              "id": "TRD_MRK",
+              "name": "Agricultural trade and markets",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD.TRD_MRK",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2285"
+                }
+              ],
+              "items": [
+                {
+                  "id": "TRD_MRK_AMI",
+                  "name": "Agricultural market information system (AMIS)",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD.TRD_MRK.TRD_MRK_AMI",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2297"
+                    }
+                  ]
+                },
+                {
+                  "id": "TRD_MRK_OUT",
+                  "name": "Agricultural market outlook (OECD-FAO Agricultural Outlook)",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD.TRD_MRK.TRD_MRK_OUT",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2312"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TRD_GLS",
+              "name": "Global value and supply chains",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD.TRD_GLS",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2328"
+                }
+              ]
+            },
+            {
+              "id": "TRD_DIG",
+              "name": "Digital trade",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD.TRD_DIG",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2342"
+                }
+              ],
+              "items": [
+                {
+                  "id": "TRD_DIG_DST",
+                  "name": "Digital Services trade restrictiveness index (DSTRI)",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD.TRD_DIG.TRD_DIG_DST",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2354"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TRD_POL",
+              "name": "Trade policy",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD.TRD_POL",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2370"
+                }
+              ],
+              "items": [
+                {
+                  "id": "TRD_POL_AGP",
+                  "name": "Agriculture policy monitoring and evalution",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD.TRD_POL.TRD_POL_AGP",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2382"
+                    }
+                  ]
+                },
+                {
+                  "id": "TRD_POL_TFI",
+                  "name": "Trade facilitation (Trade Facilitation Index - TFI)",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD.TRD_POL.TRD_POL_TFI",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2397"
+                    }
+                  ]
+                },
+                {
+                  "id": "TRD_POL_EXC",
+                  "name": "Export restrictions on critical raw materials",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD.TRD_POL.TRD_POL_EXC",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2412"
+                    }
+                  ]
+                },
+                {
+                  "id": "TRD_POL_EXS",
+                  "name": "Export restrictions on staple crops (AMIS)",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD.TRD_POL.TRD_POL_EXS",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2427"
+                    }
+                  ]
+                },
+                {
+                  "id": "TRD_POL_SUB",
+                  "name": "Subsidies and government support",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD.TRD_POL.TRD_POL_SUB",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2442"
+                    }
+                  ],
+                  "items": [
+                    {
+                      "id": "TRD_POL_SUB_FIS",
+                      "name": "Fisheries support",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD.TRD_POL.TRD_POL_SUB.TRD_POL_SUB_FIS",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "2455"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "TRD_POL_SUB_FOS",
+                      "name": "Fossil fuel support",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD.TRD_POL.TRD_POL_SUB.TRD_POL_SUB_FOS",
+                      "annotations": [
+                        {
+                          "type": "ORDER",
+                          "text": "2468"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TRD_SUS",
+              "name": "Trade, inclusion and sustainability",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD.TRD_SUS",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2483"
+                }
+              ],
+              "items": [
+                {
+                  "id": "TRD_STR_TRE",
+                  "name": "Trade and environmental sustainability",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD.TRD_SUS.TRD_STR_TRE",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2495"
+                    }
+                  ]
+                },
+                {
+                  "id": "TRD_STR_INC",
+                  "name": "Inclusive trade",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD.TRD_SUS.TRD_STR_INC",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2510"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TRD_GDS",
+              "name": "Trade in goods and services",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD.TRD_GDS",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2524"
+                }
+              ],
+              "items": [
+                {
+                  "id": "TRD_GDS_GOD",
+                  "name": "Trade in goods",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD.TRD_GDS.TRD_GDS_GOD",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2536"
+                    }
+                  ]
+                },
+                {
+                  "id": "TRD_GDS_STR",
+                  "name": "Trade in services",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD.TRD_GDS.TRD_GDS_STR",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2549"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TRD_ILL",
+              "name": "Illicit trade",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRD.TRD_ILL",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2563"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "TRA",
+          "name": "Transport",
+          "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRA",
+          "annotations": [
+            {
+              "type": "ORDER",
+              "text": "2577"
+            }
+          ],
+          "items": [
+            {
+              "id": "TRA_STI",
+              "name": "Short term transport indicators",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRA.TRA_STI",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2589"
+                }
+              ]
+            },
+            {
+              "id": "TRA_ATT",
+              "name": "Annual transport trends",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRA.TRA_ATT",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2602"
+                }
+              ]
+            },
+            {
+              "id": "TRA_IMS",
+              "name": "Infrastructure investment and maintenance spending",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRA.TRA_IMS",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2615"
+                }
+              ]
+            },
+            {
+              "id": "TRA_TPI",
+              "name": "Transport performance indicators",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRA.TRA_TPI",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2630"
+                }
+              ]
+            },
+            {
+              "id": "TRA_IRT",
+              "name": "IRTAD Database",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRA.TRA_IRT",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2643"
+                }
+              ],
+              "items": [
+                {
+                  "id": "TRA_IRT_LAC",
+                  "name": "IRTAD LAC",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRA.TRA_IRT.TRA_IRT_LAC",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2655"
+                    }
+                  ]
+                },
+                {
+                  "id": "TRA_IRT_ACC",
+                  "name": "IRTAD accession",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TRA.TRA_IRT.TRA_IRT_ACC",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2668"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "TAX",
+          "name": "Taxation",
+          "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TAX",
+          "annotations": [
+            {
+              "type": "ORDER",
+              "text": "2683"
+            }
+          ],
+          "items": [
+            {
+              "id": "TAX_CPT",
+              "name": "Corporate tax",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TAX.TAX_CPT",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2695"
+                }
+              ]
+            },
+            {
+              "id": "TAX_GTR",
+              "name": "Global tax revenues",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TAX.TAX_GTR",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2708"
+                }
+              ]
+            },
+            {
+              "id": "TAX_PPT",
+              "name": "Personal and property tax",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TAX.TAX_PPT",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2721"
+                }
+              ]
+            },
+            {
+              "id": "TAX_ENV",
+              "name": "Tax and environment",
+              "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TAX.TAX_ENV",
+              "annotations": [
+                {
+                  "type": "ORDER",
+                  "text": "2735"
+                }
+              ],
+              "items": [
+                {
+                  "id": "TAX_ENV_CPE",
+                  "name": "Carbon pricing and energy taxation",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.categoryscheme.Category=OECD:OECDCS1(5.3).TAX.TAX_ENV.TAX_ENV_CPE",
+                  "annotations": [
+                    {
+                      "type": "ORDER",
+                      "text": "2747"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

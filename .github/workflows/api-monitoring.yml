@@ -1,0 +1,132 @@
+name: OECD API Monitoring
+
+on:
+  schedule:
+    # Run every day at 06:00 UTC
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'package.json'
+
+jobs:
+  test-api:
+    name: Test OECD SDMX API
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Run contract tests
+        id: contract_tests
+        run: |
+          npm test tests/contract/api-contract.test.ts
+        continue-on-error: true
+
+      - name: Create issue if tests fail
+        if: steps.contract_tests.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = '⚠️ OECD API Contract Tests Failed';
+            const body = `## API Contract Test Failure
+
+            The OECD SDMX API contract tests have failed.
+
+            **Workflow Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            **Triggered by:** ${{ github.event_name }}
+            **Branch:** ${{ github.ref_name }}
+            **Commit:** ${{ github.sha }}
+
+            ### Possible Causes
+            - OECD API endpoint changes
+            - SDMX response structure changes
+            - Network connectivity issues
+            - API temporary unavailability
+
+            ### Action Required
+            1. Review test failure logs
+            2. Check OECD API documentation for changes
+            3. Update client code if necessary
+            4. Re-run tests to verify fix
+
+            ### Related Links
+            - [OECD Data Portal](https://data.oecd.org/)
+            - [SDMX Documentation](https://sdmx.org/)
+            - [Workflow File](${{ github.server_url }}/${{ github.repository }}/blob/main/.github/workflows/api-monitoring.yml)
+            `;
+
+            // Check if issue already exists
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: ['api-monitoring', 'oecd-api']
+            });
+
+            if (issues.data.length === 0) {
+              // Create new issue
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: title,
+                body: body,
+                labels: ['api-monitoring', 'oecd-api', 'bug']
+              });
+            } else {
+              // Comment on existing issue
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issues.data[0].number,
+                body: `## Test Failed Again\n\n**Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\n**Time:** ${new Date().toISOString()}`
+              });
+            }
+
+      - name: Close issue if tests pass
+        if: steps.contract_tests.outcome == 'success'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: ['api-monitoring', 'oecd-api']
+            });
+
+            for (const issue of issues.data) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: 'closed'
+              });
+
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: '✅ Tests are now passing. Closing this issue.'
+              });
+            }
+
+      - name: Fail workflow if tests failed
+        if: steps.contract_tests.outcome == 'failure'
+        run: exit 1

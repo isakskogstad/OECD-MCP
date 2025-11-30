@@ -1,0 +1,58 @@
+{
+  "resources": [],
+  "references": {
+    "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=OECD.CFE.EDS:DSD_FUA_CLIM@DF_CLIM_PROJ(1.4)": {
+      "id": "DSD_FUA_CLIM@DF_CLIM_PROJ",
+      "name": "Climate projections by scenario, 2030–2060 – Cities and FUAs",
+      "description": "<p style=\"text-align: justify;\">This dataset provides sub-national indicators on 2030-2060 projections by scenario on air temperature, hot days, icing days,  tropical nights, total precipitation and extreme precipitation days in FUAs and Cities.</p>\n\n<h3>Data sources and methodology</h3>\n<div class=\"text-gray-500 px-6\">Projections are based on NASA NEX-GDDP CMIP6 data, which provides average air temperature projections at a 0.25&deg; spatial resolution for different scenarios - Shared Socioeconomic Pathways (SSPs).</div>\n\n<div>\n<ul class=\"list-disc px-10\">\n<li><strong> Hot days refer to days during which the maximum temperature is higher than 35&deg;C) </li>\n<li><strong> Tropical nights refer to nights during which the minimum temperature is higher than 20°C.  </li>\n<li><strong> Icing days are defined as days during which the maximum temperature is lower than 0°C.  </li>\n<li><strong>Extreme precipitation days are defined as days during which the total precipitation is higher than 20 mm.  </li>\n</ul>\n</div>\n\n<div class=\"text-gray-500 px-6\">&nbsp;</div>\n<div class=\"text-gray-500 px-6\">SSPs are climate scenarios up to 2100 that model how socio‑economic factors may change over the next century. These scenarios are combined with Representative Concentration Pathways (RCPs), which outline different greenhouse gas (GHG) concentration levels and their radiative forcings. Radiative forcing quantifies how factors like GHGs, aerosols and solar changes affect Earth&rsquo;s atmospheric energy balance. This dataset covers highlights four scenarios:</div>\n<div class=\"text-gray-500 px-10\">\n<ul class=\"list-disc px-10\">\n<li><strong>SSP1-2.6</strong>: Sustainability. 2.6 watts per square metre (W/m2) radiative forcing, 1.8&deg;C warming by 2100.</li>\n<li><strong>SSP2-4.5</strong>: Middle-of-the-road. 4.5 W/m2 radiative forcing, 2.7&deg;C warming by 2100.</li>\n<li><strong>SSP3-7.0</strong>: Regional rivalry. 7.0 W/m2 radiative forcing, 3.6&deg;C warming by 2100.</li>\n<li><strong>SSP5-8.5</strong>: Fossil fuel development. 8.5 W/m2 radiative forcing, 4.4&deg;C warming by 2100.</li>\n</ul>\n</div>\n\n<h3>Defining FUAs and cities</h3>\n<p align=\"justify\">The OECD, in cooperation with the EU, has developed a harmonised <a href=\"https://www.oecd.org/en/data/datasets/oecd-definition-of-cities-and-functional-urban-areas.html\">definition of functional urban areas</a> (FUAs) to capture the economic and functional reach of cities based on daily commuting patterns <a href=https://doi.org/10.1787/9789264174108-en>(OECD, 2012)</a>. FUAs consist of:\n<ol>\n  <li><b>A city</b> – defined by urban centres in the degree of urbanisation, adapted to the closest local administrative units to define a city.</li>\n  <li><b>A commuting zone</b> – including all local areas where at least 15% of employed residents work in the city.</li>\n</ol>\nThe delineation process includes:\n<ul>\n  <li>Assigning municipalities surrounded by a single FUA to that FUA.</li>\n  <li>Excluding non-contiguous municipalities.</li>\n</ul>\nThe definition identifies 1 285 FUAs and 1 402 cities in all OECD member countries except Costa Rica and three accession countries.</p>\n\n<h3>Cite this dataset</h3>\n<p>OECD Regions, cities and local areas database (<a href=http://data-explorer.oecd.org/s/1vo >Climate projections by scenario, 2030-2060 – Cities and FUAs</a>), <a href=http://oe.cd/geostats>http://oe.cd/geostats</a></p>\n\n\n<h3>Further information</h3>\n<ul> \n<li> <a href=https://localdataportal.oecd.org/>OECD Local Data Portal </a> </li>\n<li> <a href=https://www.oecd.org/en/publications/oecd-regions-and-cities-at-a-glance-2024_f42db3bf-en.html/>OECD Regions and Cities at a Glance </a> </li>\n</ul>\n<p align=\"justify\">For questions and/or comments, please email  <a href=\"mailto:CitiesStat@oecd.org\">CitiesStat@oecd.org</a>",
+      "agencyID": "OECD.CFE.EDS",
+      "version": "1.4",
+      "isFinal": true,
+      "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=OECD.CFE.EDS:DSD_FUA_CLIM@DF_CLIM_PROJ(1.4)",
+      "annotations": [
+        {
+          "type": "NonProductionDataflow",
+          "text": "true"
+        },
+        {
+          "id": "@SDMX",
+          "title": "REF_AREA,TERRITORIAL_LEVEL",
+          "type": "LAYOUT_ROW"
+        },
+        {
+          "id": "@SDMX",
+          "title": "TIME_PERIOD",
+          "type": "LAYOUT_COLUMN"
+        },
+        {
+          "id": "@SDMX",
+          "title": "MEASURE",
+          "type": "LAYOUT_ROW_SECTION"
+        },
+        {
+          "id": "@SDMX",
+          "title": "OBS_STATUS=A,FREQ=A,UNIT_MULT=0",
+          "type": "NOT_DISPLAYED"
+        },
+        {
+          "id": "@SDMX",
+          "title": "REF_AREA=BEL+BE001F+BE002F+BE003F+BE004F+NLD+NL001F+NL002F+NL003F+NL004F,UNIT_MEASURE=D_Y,MEASURE=HOT_DAYS_PROJ,TIME_PERIOD_START=2050,PROJ_SCENARIO=PROJ_SSP245+PROJ_SSP370",
+          "type": "DEFAULT"
+        },
+        {
+          "id": "@SDMX",
+          "type": "EXT_RESOURCE",
+          "text": "FUAs and cities' boundaries (GPKG file)|https://stats.oecd.org/wbos/fileview2.aspx?IDFile=3b18f993-eae9-4870-918c-e098d9fcd6ff"
+        },
+        {
+          "title": "COMBINED_REF_AREA:REF_AREA,TERRITORIAL_LEVEL",
+          "type": "COMBINED_CONCEPTS",
+          "text": "COMBINED_REF_AREA:Combined reference area"
+        }
+      ],
+      "structure": {
+        "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=OECD.CFE.EDS:DSD_FUA_CLIM(1.4)"
+      }
+    }
+  }
+}
