@@ -53,7 +53,7 @@ export const OECD_CATEGORIES: OECDCategory[] = [
     id: 'EDU',
     name: 'Education',
     description: 'PISA results, education spending, educational attainment',
-    exampleDatasets: [], // PISA not available via SDMX API (downloadable files only)
+    exampleDatasets: ['EAG_FIN'], // Education at a Glance - Financial Indicators
   },
   {
     id: 'ENV',
@@ -65,13 +65,13 @@ export const OECD_CATEGORIES: OECDCategory[] = [
     id: 'TRD',
     name: 'Trade',
     description: 'International trade, imports, exports, trade agreements',
-    exampleDatasets: ['CTS', 'BTDIXE', 'EBOPS'],
+    exampleDatasets: ['TIS'], // Trade in Services
   },
   {
     id: 'JOB',
     name: 'Employment',
     description: 'Labour market, unemployment, wages, working conditions',
-    exampleDatasets: ['UN_DEN', 'AV_AN_WAGE', 'ELS'],
+    exampleDatasets: ['AVD_DUR'], // Unemployment by Duration
   },
   {
     id: 'NRG',
@@ -179,22 +179,28 @@ export const POPULAR_DATASETS: PopularDataset[] = [
     category: 'EDU',
   },
   {
-    id: 'UN_DEN',
+    id: 'AVD_DUR',
     name: 'Unemployment by Duration',
-    description: '⏳ NOT YET IMPLEMENTED - Unemployment statistics by duration',
+    description: '✅ AVAILABLE - Average duration of unemployment in months',
     category: 'JOB',
+  },
+  {
+    id: 'EAG_FIN',
+    name: 'Education Finance',
+    description: '✅ AVAILABLE - Education spending per student by education level',
+    category: 'EDU',
+  },
+  {
+    id: 'TIS',
+    name: 'Trade in Services',
+    description: '✅ AVAILABLE - International trade in services by country',
+    category: 'TRD',
   },
   {
     id: 'GREEN_GROWTH',
     name: 'Green Growth Indicators',
     description: '⏳ NOT YET IMPLEMENTED - Environmental and economic indicators',
     category: 'ENV',
-  },
-  {
-    id: 'CTS',
-    name: 'Trade in Services',
-    description: '⏳ NOT YET IMPLEMENTED - International trade in services',
-    category: 'TRD',
   },
   {
     id: 'FDI',

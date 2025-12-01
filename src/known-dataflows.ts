@@ -57,6 +57,45 @@ export const KNOWN_DATAFLOWS: KnownDataflow[] = [
   },
 
   // ========================================
+  // EDUCATION (OECD.EDU.IMEP)
+  // ========================================
+  {
+    id: 'EAG_FIN',
+    fullId: 'DSD_EAG_UOE_FIN@DF_UOE_INDIC_FIN_PERSTUD',
+    agency: 'OECD.EDU.IMEP',
+    version: '3.0',
+    name: 'Education at a Glance - Financial Indicators per Student',
+    description: 'Education spending per student by education level. Part of UNESCO-UIS/OECD/EUROSTAT (UOE) data collection.',
+    category: 'EDU',
+  },
+
+  // ========================================
+  // EMPLOYMENT & LABOUR (OECD.ELS.SAE)
+  // ========================================
+  {
+    id: 'AVD_DUR',
+    fullId: 'DSD_DUR@DF_AVD_DUR',
+    agency: 'OECD.ELS.SAE',
+    version: '1.0',
+    name: 'Unemployment by Duration - Average Duration',
+    description: 'Average duration of unemployment in months by country and demographic characteristics.',
+    category: 'JOB',
+  },
+
+  // ========================================
+  // TRADE (OECD.SDD.TPS)
+  // ========================================
+  {
+    id: 'TIS',
+    fullId: 'DSD_BOP@DF_TIS',
+    agency: 'OECD.SDD.TPS',
+    version: '1.0',
+    name: 'Trade in Services',
+    description: 'International trade in services by country and service category, based on Balance of Payments.',
+    category: 'TRD',
+  },
+
+  // ========================================
   // CLIMATE & ENVIRONMENT (OECD.CFE.EDS - Functional Urban Areas)
   // ========================================
   {
