@@ -1,6 +1,6 @@
 <div align="right">
 
-[![🇸🇪 Svenska](https://img.shields.io/badge/🇸🇪-Svenska-blue)](README.sv.md) | **🇬🇧 English**
+[<img src="https://flagcdn.com/w40/se.png" width="30" alt="Svenska"> **Svenska**](README.sv.md) | <img src="https://flagcdn.com/w40/gb.png" width="30" alt="English"> **English**
 
 </div>
 
