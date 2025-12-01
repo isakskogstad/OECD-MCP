@@ -1,0 +1,11 @@
+INSTRUKTIONER OCH API-nycklar FÖR SUPABASE KONTO:
+
+supabase account access tokens (The experimental API provides additional endpoints which allows you to manage your organizations and projects) API KEY : sbp_v0_8824bb420f61e620f2a99aa9461ab6bf2e7fe902
+
+
+Projekt "MCP-databas" I supabase, projekt url: https://thjwryuhtwlfxwduyqqd.supabase.co  
+Database password: ciszer-joxgum-soPxa8
+anon public API key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRoandyeXVodHdsZnh3ZHV5cXFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ1NTYzNjgsImV4cCI6MjA4MDEzMjM2OH0 
+publishable key: sb_publishable_Lv8hXNoXwRO2YGw9mzOZtg_sPOzJexD 
+secret key: sb_secret_3IfZNYqcxd4BYkqBqMchiA_OPFKWst5 
+legacy JWT secret: IhWhXIJx/vtX9v4zDRzdk+2shfAtiwi8b3ntoASp+muTleRvE0gESlqcssudaZbyFBitdHj+0R/Wm/GhbtC0mA== 

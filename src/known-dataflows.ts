@@ -120,24 +120,6 @@ export const KNOWN_DATAFLOWS: KnownDataflow[] = [
     description: 'Comprehensive government indicators including public finance, budgeting, human resources management, regulatory governance, and open government.',
     category: 'GOV',
   },
-  {
-    id: 'SNA_TABLE11',
-    fullId: 'DSD_NASEC10@SNA_TABLE11',
-    agency: 'OECD.SDD.NAD',
-    version: '1.0',
-    name: 'Government Expenditure by Function (COFOG)',
-    description: 'General government expenditure by Classification of the Functions of Government (COFOG). Shows spending on health, education, defense, etc.',
-    category: 'GOV',
-  },
-  {
-    id: 'GGDP',
-    fullId: 'DSD_NASEC10@GGDP',
-    agency: 'OECD.SDD.NAD',
-    version: '1.0',
-    name: 'General Government Debt-to-GDP ratio',
-    description: 'General government gross debt as a percentage of GDP. Key fiscal sustainability indicator.',
-    category: 'GOV',
-  },
 
   // ========================================
   // CLIMATE & ENVIRONMENT (OECD.CFE.EDS - Functional Urban Areas)
@@ -341,6 +323,160 @@ export const KNOWN_DATAFLOWS: KnownDataflow[] = [
     name: 'ICT Access and Usage by Individuals',
     description: 'Information and Communication Technology access and usage statistics by individuals, including internet usage, e-commerce, and digital skills.',
     category: 'STI',
+  },
+
+  // ========================================
+  // ADDITIONAL EMPLOYMENT & PRODUCTIVITY (OECD.SDD.LFS, OECD.SDD.TPS)
+  // ========================================
+  {
+    id: 'LFS_SEXAGE_I_R',
+    fullId: 'DSD_LFS@DF_IALFS_UNE_M',
+    agency: 'OECD.SDD.LFS',
+    version: '1.0',
+    name: 'Labour Force Statistics - Unemployment by Sex and Age',
+    description: 'Monthly unemployment rates by sex and age group. Part of the Short-Term Labour Market Statistics collection.',
+    category: 'JOB',
+  },
+  {
+    id: 'ANHRS',
+    fullId: 'DSD_ANHRS@DF_ANHRS',
+    agency: 'OECD.SDD.LFS',
+    version: '1.0',
+    name: 'Average Annual Hours Worked',
+    description: 'Average hours actually worked per worker per year. Key indicator for productivity and work-life balance analysis.',
+    category: 'JOB',
+  },
+  {
+    id: 'PDB_LV',
+    fullId: 'DSD_PDB@DF_PDB_LV',
+    agency: 'OECD.SDD.TPS',
+    version: '1.0',
+    name: 'Productivity - GDP per Hour Worked',
+    description: 'Labour productivity levels - GDP per hour worked, indexed and in USD. Crucial for economic competitiveness analysis.',
+    category: 'ECO',
+  },
+
+  // ========================================
+  // ADDITIONAL HEALTH (OECD.ELS.HD)
+  // ========================================
+  {
+    id: 'SHA',
+    fullId: 'DSD_SHA@DF_SHA',
+    agency: 'OECD.ELS.HD',
+    version: '1.0',
+    name: 'System of Health Accounts',
+    description: 'Comprehensive health expenditure data by financing scheme, provider, and function. Based on SHA 2011 framework.',
+    category: 'HEA',
+  },
+  {
+    id: 'HEALTH_REAC',
+    fullId: 'DSD_HEALTH_REAC@DF_ACUTE_CARE',
+    agency: 'OECD.ELS.HD',
+    version: '1.0',
+    name: 'Health Resources - Acute Care Beds',
+    description: 'Hospital beds per 1,000 population for acute care. Healthcare infrastructure capacity indicator.',
+    category: 'HEA',
+  },
+
+  // ========================================
+  // ADDITIONAL EDUCATION (OECD.EDU.IMEP)
+  // ========================================
+  {
+    id: 'EAG_NEAC',
+    fullId: 'DSD_EAG_NEAC@DF_NEAC',
+    agency: 'OECD.EDU.IMEP',
+    version: '1.0',
+    name: 'Education at a Glance - Educational Attainment',
+    description: 'Population with tertiary education by age group and sex. Key indicator for human capital development.',
+    category: 'EDU',
+  },
+  {
+    id: 'EAG_GRAD_ENTR_RATE',
+    fullId: 'DSD_EAG_GRAD_ENTR@DF_GRAD_ENTR_RATE',
+    agency: 'OECD.EDU.IMEP',
+    version: '1.0',
+    name: 'Education at a Glance - Graduation and Entry Rates',
+    description: 'Graduation rates and new entrants by education level. Shows educational attainment trends over time.',
+    category: 'EDU',
+  },
+
+  // ========================================
+  // REGIONAL STATISTICS (OECD.CFE.EDS)
+  // ========================================
+  {
+    id: 'REGION_ECONOM',
+    fullId: 'DSD_REG_DEMO_ECON@DF_GDP_PC',
+    agency: 'OECD.CFE.EDS',
+    version: '1.0',
+    name: 'Regional Economy - GDP per Capita',
+    description: 'Regional GDP per capita in USD PPP. Shows economic disparities within countries at sub-national level.',
+    category: 'REG',
+  },
+  {
+    id: 'REGION_LABOUR',
+    fullId: 'DSD_REG_DEMO_ECON@DF_UNEMP_REG',
+    agency: 'OECD.CFE.EDS',
+    version: '1.0',
+    name: 'Regional Labour Market - Unemployment',
+    description: 'Regional unemployment rates. Labour market conditions at territorial level 2 and 3.',
+    category: 'REG',
+  },
+
+  // ========================================
+  // HOUSING & PRICES (OECD.SDD.STES, OECD.ECO.MET)
+  // ========================================
+  {
+    id: 'HPI',
+    fullId: 'DSD_PRICES@DF_HPI',
+    agency: 'OECD.SDD.STES',
+    version: '1.0',
+    name: 'House Price Index',
+    description: 'Residential property price indices (nominal and real). Critical for housing affordability and financial stability monitoring.',
+    category: 'HOU',
+  },
+  {
+    id: 'RPPI',
+    fullId: 'DSD_PRICES@DF_RPPI',
+    agency: 'OECD.ECO.MET',
+    version: '1.0',
+    name: 'Real Property Price Indicators',
+    description: 'Real house prices and price-to-income/rent ratios. Housing market valuation metrics.',
+    category: 'HOU',
+  },
+
+  // ========================================
+  // MIGRATION (OECD.ELS.MIG)
+  // ========================================
+  {
+    id: 'MIG',
+    fullId: 'DSD_MIG@DF_MIG',
+    agency: 'OECD.ELS.MIG',
+    version: '1.0',
+    name: 'International Migration Database',
+    description: 'International migration flows and stocks by country of origin/destination. Includes citizenship, residence permits, and asylum seekers.',
+    category: 'MIG',
+  },
+
+  // ========================================
+  // ADDITIONAL TRADE & GLOBALIZATION (OECD.SDD.TPS)
+  // ========================================
+  {
+    id: 'TISP',
+    fullId: 'DSD_BTS@DF_BTS_TISP',
+    agency: 'OECD.SDD.TPS',
+    version: '1.0',
+    name: 'Trade in Services by Partner Country',
+    description: 'Bilateral trade in services by service category and partner country. Detailed breakdown of international services trade.',
+    category: 'TRD',
+  },
+  {
+    id: 'TIVA',
+    fullId: 'DSD_TIVA@DF_TIVA_2021',
+    agency: 'OECD.SDD.TPS',
+    version: '1.0',
+    name: 'Trade in Value Added 2021',
+    description: 'Value added in gross exports by source country and industry. Shows global value chain participation and domestic content of exports.',
+    category: 'TRD',
   },
 ];
 

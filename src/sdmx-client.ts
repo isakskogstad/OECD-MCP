@@ -45,10 +45,29 @@ export interface SDMXObservation {
 export class OECDSDMXClient {
   private baseUrl: string;
   private agency: string;
+  private lastRequestTime: number = 0;
+  private readonly MIN_REQUEST_INTERVAL_MS = 1500; // 1.5 seconds between requests to avoid rate limiting
 
   constructor(baseUrl: string = OECD_SDMX_BASE, agency: string = OECD_AGENCY) {
     this.baseUrl = baseUrl;
     this.agency = agency;
+  }
+
+  /**
+   * Rate limiting: Ensure minimum delay between API requests
+   * OECD SDMX API has strict per-IP rate limiting (~20-30 rapid requests trigger blocking)
+   */
+  private async enforceRateLimit(): Promise<void> {
+    const now = Date.now();
+    const timeSinceLastRequest = now - this.lastRequestTime;
+
+    if (timeSinceLastRequest < this.MIN_REQUEST_INTERVAL_MS) {
+      const delayNeeded = this.MIN_REQUEST_INTERVAL_MS - timeSinceLastRequest;
+      console.log(`⏱️  Rate limiting: waiting ${delayNeeded}ms before next OECD API request`);
+      await new Promise(resolve => setTimeout(resolve, delayNeeded));
+    }
+
+    this.lastRequestTime = Date.now();
   }
 
   /**
@@ -137,6 +156,9 @@ export class OECDSDMXClient {
     // Format: /data/{AGENCY},{DSD_ID}@{DF_ID}/{filter}
     // NOTE: Version parameter omitted - OECD SDMX API doesn't require/accept it for most dataflows
     const url = `${this.baseUrl}/data/${knownDf.agency},${knownDf.fullId}/${filter}?${params.toString()}`;
+
+    // Enforce rate limiting BEFORE making the API request
+    await this.enforceRateLimit();
 
     const response = await fetch(url, {
       headers: {
