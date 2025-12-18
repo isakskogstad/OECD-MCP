@@ -239,6 +239,8 @@ The MCP server implements the MCP protocol with support for:
 
 ### Ekonomer & Forskare
 
+**Verktyg:**
+
 | Verktyg | Beskrivning |
 |---------|-------------|
 | `query_data` | Fråga BNP, inflation, arbetslöshetsdata |
@@ -250,9 +252,13 @@ The MCP server implements the MCP protocol with support for:
 - "Analysera inflationstrender i eurozonen"
 - "Hitta data om arbetsproduktivitet per sektor"
 
+**App-exempel:** Mobil ekonomisk brief med BNP-trender och jämförelsediagram.
+
 ---
 
 ### Policyanalytiker
+
+**Verktyg:**
 
 | Verktyg | Beskrivning |
 |---------|-------------|
@@ -265,9 +271,13 @@ The MCP server implements the MCP protocol with support for:
 - "Hitta utbildningsresultatindikatorer för PISA-analys"
 - "Jämför miljöpolicyer i nordiska länder"
 
+**App-exempel:** Hälsostatistik-dashboard med donutdiagram och landjämförelser.
+
 ---
 
 ### Datajournalister
+
+**Verktyg:**
 
 | Verktyg | Beskrivning |
 |---------|-------------|
@@ -280,9 +290,13 @@ The MCP server implements the MCP protocol with support for:
 - "Hitta inkomstojämlikhetsdata (Gini-koefficient)"
 - "Jämför skatteintäkter som % av BNP"
 
+**App-exempel:** Produktivitetsjämförelse med stapeldiagram och trendlinjer.
+
 </details>
 
 ### Economists & Researchers
+
+**Tools:**
 
 | Tool | Description |
 |------|-------------|
@@ -295,9 +309,17 @@ The MCP server implements the MCP protocol with support for:
 - "Analyze inflation trends in the Eurozone"
 - "Find data on labor productivity by sector"
 
+**App Example:**
+
+<img width="320" alt="GDP Economic Brief" src="https://raw.githubusercontent.com/isakskogstad/OECD-MCP/main/assets/app-examples/app1-mobile-minimalist.png" />
+
+*Mobile economic brief with GDP trends, G7 comparison charts, and sparkline visualizations from the QNA dataset.*
+
 ---
 
 ### Policy Analysts
+
+**Tools:**
 
 | Tool | Description |
 |------|-------------|
@@ -310,9 +332,17 @@ The MCP server implements the MCP protocol with support for:
 - "Find education outcome indicators for PISA analysis"
 - "Compare environmental policies across Nordic countries"
 
+**App Example:**
+
+<img width="500" alt="Health Statistics" src="https://raw.githubusercontent.com/isakskogstad/OECD-MCP/main/assets/app-examples/app2-light-minimalist.png" />
+
+*Health statistics dashboard with donut chart overview and country comparison from the HEALTH_STAT dataset.*
+
 ---
 
 ### Data Journalists
+
+**Tools:**
 
 | Tool | Description |
 |------|-------------|
@@ -325,30 +355,11 @@ The MCP server implements the MCP protocol with support for:
 - "Find income inequality data (Gini coefficient)"
 - "Compare tax revenues as % of GDP"
 
----
-
-### App Examples
-
-<details>
-<summary>🇸🇪 App-exempel (Svenska)</summary>
-
-Interaktiva exempel på vad som kan byggas med denna MCP-server. Varje app använder riktig data från OECD API:et.
-
-</details>
-
-Interactive examples of what can be built with this MCP server. Each app uses real data from the OECD API.
-
-<img width="600" alt="Economic Indicators Dashboard" src="https://raw.githubusercontent.com/isakskogstad/OECD-MCP/main/assets/app-examples/app1-dark-dashboard.png" />
-
-**Economic Indicators Dashboard** — Dark mode dashboard showing Composite Leading Indicators (CLI) from the MEI dataset for G7 countries, plus data category overview.
-
-<img width="600" alt="Health Statistics" src="https://raw.githubusercontent.com/isakskogstad/OECD-MCP/main/assets/app-examples/app2-light-minimalist.png" />
-
-**OECD Health Statistics** — Light minimalist design displaying perceived health status by country from the HEALTH_STAT dataset, with progress bars and metadata.
+**App Example:**
 
 <img width="600" alt="Productivity Comparison" src="https://raw.githubusercontent.com/isakskogstad/OECD-MCP/main/assets/app-examples/app3-bold-colorful.png" />
 
-**GDP per Hour Worked** — Bold colorful comparison of labor productivity (PDB_LV dataset) across OECD countries with year-over-year changes.
+*Labor productivity comparison with bar charts and trend sparklines from the PDB_LV dataset.*
 
 ---
 

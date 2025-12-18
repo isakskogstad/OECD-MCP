@@ -14,7 +14,7 @@
 <body class="min-h-screen bg-slate-50 p-8">
   <div class="max-w-3xl mx-auto">
     <!-- Header -->
-    <header class="mb-12 border-b border-slate-200 pb-8">
+    <header class="mb-8 border-b border-slate-200 pb-6">
       <div class="text-sm text-slate-400 uppercase tracking-widest mb-2">OECD Health Data</div>
       <h1 class="text-4xl font-medium text-slate-800 tracking-tight mb-3">
         Perceived Health Status
@@ -24,8 +24,41 @@
       </p>
     </header>
 
+    <!-- Summary Chart -->
+    <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-100 mb-8">
+      <h2 class="text-lg font-medium text-slate-700 mb-4">OECD Health Overview</h2>
+      <div class="flex items-center justify-around">
+        <!-- Donut Chart -->
+        <div class="relative">
+          <svg class="w-32 h-32" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" fill="none" stroke="#f1f5f9" stroke-width="12"/>
+            <circle cx="50" cy="50" r="40" fill="none" stroke="#10b981" stroke-width="12"
+                    stroke-dasharray="201" stroke-dashoffset="40"
+                    transform="rotate(-90 50 50)" stroke-linecap="round"/>
+            <text x="50" y="46" text-anchor="middle" class="text-2xl font-semibold" fill="#334155">79%</text>
+            <text x="50" y="60" text-anchor="middle" class="text-xs" fill="#94a3b8">Average</text>
+          </svg>
+        </div>
+        <!-- Stats -->
+        <div class="space-y-3 text-sm">
+          <div class="flex items-center gap-3">
+            <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+            <span class="text-slate-600">Good/Very Good: <strong class="text-slate-800">79%</strong></span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+            <span class="text-slate-600">Fair: <strong class="text-slate-800">15%</strong></span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-3 h-3 rounded-full bg-slate-300"></div>
+            <span class="text-slate-600">Poor: <strong class="text-slate-800">6%</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Data List -->
-    <div class="space-y-4 mb-12">
+    <div class="space-y-4 mb-8">
       <!-- UK -->
       <article class="bg-white rounded-xl p-6 shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
         <div class="flex justify-between items-start">

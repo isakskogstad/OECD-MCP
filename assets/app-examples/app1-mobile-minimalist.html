@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OECD Economic Brief</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; background: #f8f9fa; }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+  <!-- iPhone Frame -->
+  <div class="w-[375px] h-[812px] bg-white rounded-[40px] shadow-2xl overflow-hidden border border-gray-200 relative">
+    <!-- Status Bar -->
+    <div class="h-12 bg-white flex items-center justify-between px-6 pt-2">
+      <span class="text-sm font-medium text-gray-900">9:41</span>
+      <div class="flex items-center gap-1">
+        <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3a9 9 0 109 9 9 9 0 00-9-9zm0 16a7 7 0 117-7 7 7 0 01-7 7z"/></svg>
+        <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 24 24"><path d="M17 4h-3V2h-4v2H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2z"/></svg>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="px-5 pt-2 pb-6 h-full overflow-y-auto">
+      <!-- Header -->
+      <div class="mb-5">
+        <p class="text-xs text-gray-400 uppercase tracking-widest mb-1">OECD Data</p>
+        <h1 class="text-2xl font-semibold text-gray-900 leading-tight">Economic Brief</h1>
+        <p class="text-sm text-gray-500 mt-1">December 2024</p>
+      </div>
+
+      <!-- Key Metric with Sparkline -->
+      <div class="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-5 mb-5 border border-slate-200">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs text-slate-500 uppercase tracking-wide font-medium">GDP Growth</span>
+          <span class="text-xs text-slate-400">Q3 2024</span>
+        </div>
+        <div class="flex items-end justify-between">
+          <div>
+            <div class="flex items-baseline gap-1">
+              <span class="text-4xl font-semibold text-slate-900">2.1</span>
+              <span class="text-lg text-slate-400">%</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">OECD Average</p>
+          </div>
+          <!-- Mini Sparkline Chart -->
+          <svg class="w-24 h-12" viewBox="0 0 100 40">
+            <defs>
+              <linearGradient id="sparkGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#64748b;stop-opacity:0.3"/>
+                <stop offset="100%" style="stop-color:#64748b;stop-opacity:0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0 35 L15 30 L30 32 L45 25 L60 20 L75 15 L90 12 L100 10 L100 40 L0 40 Z" fill="url(#sparkGradient)"/>
+            <polyline points="0,35 15,30 30,32 45,25 60,20 75,15 90,12 100,10" fill="none" stroke="#475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="100" cy="10" r="3" fill="#475569"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Bar Chart Section -->
+      <div class="mb-5">
+        <h2 class="text-xs text-gray-400 uppercase tracking-widest mb-3">G7 GDP Growth Comparison</h2>
+        <div class="bg-white rounded-xl border border-gray-100 p-4">
+          <!-- Horizontal Bar Chart -->
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <span class="text-sm w-8">🇺🇸</span>
+              <div class="flex-1 h-6 bg-gray-100 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-slate-500 to-slate-600 rounded-full" style="width: 93%"></div>
+              </div>
+              <span class="text-xs font-semibold text-slate-700 w-10 text-right">2.8%</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-sm w-8">🇯🇵</span>
+              <div class="flex-1 h-6 bg-gray-100 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-slate-400 to-slate-500 rounded-full" style="width: 63%"></div>
+              </div>
+              <span class="text-xs font-semibold text-slate-700 w-10 text-right">1.9%</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-sm w-8">🇨🇦</span>
+              <div class="flex-1 h-6 bg-gray-100 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-slate-400 to-slate-500 rounded-full" style="width: 50%"></div>
+              </div>
+              <span class="text-xs font-semibold text-slate-700 w-10 text-right">1.5%</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-sm w-8">🇬🇧</span>
+              <div class="flex-1 h-6 bg-gray-100 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-slate-300 to-slate-400 rounded-full" style="width: 37%"></div>
+              </div>
+              <span class="text-xs font-semibold text-slate-700 w-10 text-right">1.1%</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-sm w-8">🇫🇷</span>
+              <div class="flex-1 h-6 bg-gray-100 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-slate-300 to-slate-400 rounded-full" style="width: 33%"></div>
+              </div>
+              <span class="text-xs font-semibold text-slate-700 w-10 text-right">1.0%</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-sm w-8">🇮🇹</span>
+              <div class="flex-1 h-6 bg-gray-100 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-slate-300 to-slate-400 rounded-full" style="width: 23%"></div>
+              </div>
+              <span class="text-xs font-semibold text-slate-700 w-10 text-right">0.7%</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-sm w-8">🇩🇪</span>
+              <div class="flex-1 h-6 bg-gray-100 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-slate-200 to-slate-300 rounded-full" style="width: 7%"></div>
+              </div>
+              <span class="text-xs font-semibold text-slate-700 w-10 text-right">0.2%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trend Line Chart -->
+      <div class="mb-5">
+        <h2 class="text-xs text-gray-400 uppercase tracking-widest mb-3">OECD GDP Trend (2020-2024)</h2>
+        <div class="bg-white rounded-xl border border-gray-100 p-4">
+          <svg class="w-full h-32" viewBox="0 0 300 100">
+            <!-- Grid lines -->
+            <line x1="30" y1="10" x2="30" y2="80" stroke="#e5e7eb" stroke-width="1"/>
+            <line x1="30" y1="80" x2="290" y2="80" stroke="#e5e7eb" stroke-width="1"/>
+            <line x1="30" y1="45" x2="290" y2="45" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4"/>
+            <line x1="30" y1="10" x2="290" y2="10" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4"/>
+
+            <!-- Y axis labels -->
+            <text x="25" y="13" text-anchor="end" class="text-[8px]" fill="#9ca3af">4%</text>
+            <text x="25" y="48" text-anchor="end" class="text-[8px]" fill="#9ca3af">0%</text>
+            <text x="25" y="83" text-anchor="end" class="text-[8px]" fill="#9ca3af">-4%</text>
+
+            <!-- X axis labels -->
+            <text x="55" y="95" text-anchor="middle" class="text-[8px]" fill="#9ca3af">2020</text>
+            <text x="120" y="95" text-anchor="middle" class="text-[8px]" fill="#9ca3af">2021</text>
+            <text x="185" y="95" text-anchor="middle" class="text-[8px]" fill="#9ca3af">2022</text>
+            <text x="250" y="95" text-anchor="middle" class="text-[8px]" fill="#9ca3af">2023</text>
+            <text x="285" y="95" text-anchor="middle" class="text-[8px]" fill="#9ca3af">2024</text>
+
+            <!-- Area fill -->
+            <defs>
+              <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#64748b;stop-opacity:0.2"/>
+                <stop offset="100%" style="stop-color:#64748b;stop-opacity:0"/>
+              </linearGradient>
+            </defs>
+            <path d="M55 75 L120 20 L185 35 L250 38 L285 33 L285 80 L55 80 Z" fill="url(#areaGradient)"/>
+
+            <!-- Line -->
+            <polyline points="55,75 120,20 185,35 250,38 285,33" fill="none" stroke="#475569" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+            <!-- Data points -->
+            <circle cx="55" cy="75" r="4" fill="#fff" stroke="#475569" stroke-width="2"/>
+            <circle cx="120" cy="20" r="4" fill="#fff" stroke="#475569" stroke-width="2"/>
+            <circle cx="185" cy="35" r="4" fill="#fff" stroke="#475569" stroke-width="2"/>
+            <circle cx="250" cy="38" r="4" fill="#fff" stroke="#475569" stroke-width="2"/>
+            <circle cx="285" cy="33" r="4" fill="#475569" stroke="#475569" stroke-width="2"/>
+
+            <!-- Value labels -->
+            <text x="55" y="68" text-anchor="middle" class="text-[8px] font-medium" fill="#475569">-4.3%</text>
+            <text x="120" y="13" text-anchor="middle" class="text-[8px] font-medium" fill="#475569">5.6%</text>
+            <text x="185" y="28" text-anchor="middle" class="text-[8px] font-medium" fill="#475569">3.1%</text>
+            <text x="250" y="31" text-anchor="middle" class="text-[8px] font-medium" fill="#475569">2.9%</text>
+            <text x="285" y="26" text-anchor="middle" class="text-[8px] font-medium" fill="#475569">2.1%</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Dataset Info -->
+      <div class="bg-slate-50 rounded-xl p-4 mb-5 border border-slate-100">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-xs text-slate-400 uppercase tracking-wide">Dataset</p>
+            <p class="text-sm font-medium text-slate-700">QNA • Quarterly National Accounts</p>
+          </div>
+          <div class="w-8 h-8 bg-slate-200 rounded-lg flex items-center justify-center">
+            <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="text-center pt-2 pb-16">
+        <p class="text-xs text-gray-400">Data via OECD MCP Server</p>
+        <p class="text-xs text-gray-300 mt-1">SDMX API • Updated Dec 2024</p>
+      </div>
+    </div>
+
+    <!-- Home Indicator -->
+    <div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-gray-900 rounded-full"></div>
+  </div>
+</body>
+</html>
