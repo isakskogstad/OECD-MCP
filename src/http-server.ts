@@ -79,7 +79,8 @@ app.use(cors());
 app.use(express.json());
 
 // Serve static assets (banner, images, etc.)
-app.use('/assets', express.static(join(__dirname, '..', 'assets')));
+// Use process.cwd() for reliable path resolution on Render
+app.use('/assets', express.static(join(process.cwd(), 'assets')));
 
 // Initialize OECD client - direct API calls only, no caching
 const client = new OECDClient();
