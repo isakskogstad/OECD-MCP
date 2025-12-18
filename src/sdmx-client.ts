@@ -100,9 +100,8 @@ export class OECDSDMXClient {
   }
 
   /**
-   * Get dataflow structure (metadata)
-   * NOTE: OECD SDMX API does not provide full structure definitions
-   * Returns simplified structure based on known dataflows
+   * Get dataflow structure (metadata) by fetching from OECD API
+   * Retrieves actual dimension definitions and possible values
    */
   async getDataStructure(dataflowId: string, version?: string): Promise<SDMXDataStructure> {
     // Find the known dataflow
@@ -111,35 +110,149 @@ export class OECDSDMXClient {
       throw new Error(`Unknown dataflow: ${dataflowId}. Use listDataflows() to see available dataflows.`);
     }
 
-    // Return simplified structure - OECD API doesn't expose full DSD
+    // Try to fetch real structure from OECD API
+    try {
+      // Enforce rate limiting
+      await this.enforceRateLimit();
+
+      // Query for a small sample of data to get structure metadata
+      const params = new URLSearchParams({
+        format: 'jsondata',
+        lastNObservations: '1',
+      });
+
+      const url = `${this.baseUrl}/data/${knownDf.agency},${knownDf.fullId}/all?${params.toString()}`;
+
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), this.REQUEST_TIMEOUT_MS);
+
+      try {
+        const response = await fetch(url, {
+          headers: { Accept: 'application/json' },
+          signal: controller.signal,
+        });
+
+        if (!response.ok) {
+          throw new Error(`Failed to fetch structure: ${response.status}`);
+        }
+
+        const data = await response.json();
+        return this.parseDataStructure(dataflowId, data);
+      } finally {
+        clearTimeout(timeoutId);
+      }
+    } catch (error) {
+      // Fallback to basic structure if API call fails
+      console.warn(`Failed to fetch structure for ${dataflowId}, using fallback:`, error);
+      return this.getFallbackStructure(dataflowId);
+    }
+  }
+
+  /**
+   * Parse structure from SDMX-JSON response
+   */
+  private parseDataStructure(dataflowId: string, data: any): SDMXDataStructure {
+    const { seriesDimensions, observationDimensions } = this.extractDimensionMetadata(data);
+
+    // Combine series and observation dimensions
+    const allDimensions: SDMXDimension[] = [];
+
+    for (const dim of seriesDimensions) {
+      allDimensions.push({
+        id: dim.id,
+        name: dim.name,
+        values: (dim.values || []).slice(0, 50).map((v: any) => ({
+          id: v.id,
+          name: v.name || v.id,
+        })),
+      });
+    }
+
+    for (const dim of observationDimensions) {
+      allDimensions.push({
+        id: dim.id,
+        name: dim.name,
+        values: (dim.values || []).slice(0, 20).map((v: any) => ({
+          id: v.id,
+          name: v.name || v.id,
+        })),
+      });
+    }
+
+    // Extract attributes if available
+    const attributes = this.extractAttributes(data);
+
+    return {
+      dataflowId,
+      dimensions: allDimensions.length > 0 ? allDimensions : this.getFallbackStructure(dataflowId).dimensions,
+      attributes,
+    };
+  }
+
+  /**
+   * Extract attribute definitions from response
+   */
+  private extractAttributes(data: any): Array<{ id: string; name: string }> {
+    const structures = data?.data?.structures || [];
+    if (structures.length > 0 && structures[0]?.attributes) {
+      const attrs = structures[0].attributes;
+      const allAttrs = [...(attrs.series || []), ...(attrs.observation || [])];
+      return allAttrs.map((a: any) => ({
+        id: a.id,
+        name: a.name || a.id,
+      }));
+    }
+
+    // Try alternative format
+    const altAttrs = data?.structure?.attributes;
+    if (altAttrs) {
+      const allAttrs = [...(altAttrs.series || []), ...(altAttrs.observation || [])];
+      return allAttrs.map((a: any) => ({
+        id: a.id,
+        name: a.name || a.id,
+      }));
+    }
+
+    return [
+      { id: 'UNIT_MEASURE', name: 'Unit of Measure' },
+      { id: 'OBS_STATUS', name: 'Observation Status' },
+    ];
+  }
+
+  /**
+   * Fallback structure when API call fails
+   */
+  private getFallbackStructure(dataflowId: string): SDMXDataStructure {
     return {
       dataflowId,
       dimensions: [
         {
           id: 'REF_AREA',
           name: 'Reference Area',
-          values: [{ id: 'all', name: 'Use query_data to get actual dimension values' }],
+          values: [
+            { id: 'SWE', name: 'Sweden' },
+            { id: 'USA', name: 'United States' },
+            { id: 'DEU', name: 'Germany' },
+            { id: 'GBR', name: 'United Kingdom' },
+            { id: 'FRA', name: 'France' },
+            { id: 'JPN', name: 'Japan' },
+            { id: 'OECD', name: 'OECD Total' },
+          ],
         },
         {
           id: 'TIME_PERIOD',
           name: 'Time Period',
-          values: [{ id: 'all', name: 'Time dimension' }],
+          values: [{ id: 'varies', name: 'Time dimension (use start_period/end_period parameters)' }],
         },
         {
           id: 'MEASURE',
           name: 'Measure',
-          values: [{ id: 'all', name: 'Measured indicator' }],
+          values: [{ id: 'varies', name: 'See dataset documentation for available measures' }],
         },
       ],
       attributes: [
-        {
-          id: 'UNIT_MEASURE',
-          name: 'Unit of Measure',
-        },
-        {
-          id: 'OBS_STATUS',
-          name: 'Observation Status',
-        },
+        { id: 'UNIT_MEASURE', name: 'Unit of Measure' },
+        { id: 'OBS_STATUS', name: 'Observation Status' },
       ],
     };
   }
