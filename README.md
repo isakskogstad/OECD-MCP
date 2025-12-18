@@ -355,12 +355,6 @@ The MCP server implements the MCP protocol with support for:
 - "Find income inequality data (Gini coefficient)"
 - "Compare tax revenues as % of GDP"
 
-**App Example:**
-
-<img width="600" alt="Productivity Comparison" src="https://raw.githubusercontent.com/isakskogstad/OECD-MCP/main/assets/app-examples/app3-bold-colorful.png" />
-
-*Labor productivity comparison with bar charts and trend sparklines from the PDB_LV dataset.*
-
 ---
 
 ### Data Categories
