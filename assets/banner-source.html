@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OECD MCP Server Banner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .banner {
+      width: 700px;
+      height: 220px;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      padding: 32px 48px;
+      border: 1px solid #e2e8f0;
+    }
+    .oecd-section {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .oecd-logo {
+      height: 80px;
+      width: auto;
+    }
+    .connector {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #94a3b8;
+    }
+    .connector-line {
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, #cbd5e1 0%, #64748b 50%, #cbd5e1 100%);
+    }
+    .connector-icon {
+      font-size: 24px;
+      color: #64748b;
+    }
+    .mcp-section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+    .mcp-icon {
+      width: 48px;
+      height: 48px;
+      color: #0f172a;
+    }
+    .mcp-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .mcp-text {
+      font-size: 28px;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+    }
+    .server-badge {
+      font-size: 14px;
+      font-weight: 600;
+      color: #059669;
+      background: #d1fae5;
+      padding: 4px 12px;
+      border-radius: 6px;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: #64748b;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <!-- OECD Logo -->
+    <div class="oecd-section">
+      <img src="file:///Users/isak/Downloads/oecd-logo-png_seeklogo-322640.png" alt="OECD Logo" class="oecd-logo">
+    </div>
+
+    <!-- Connector -->
+    <div class="connector">
+      <div class="connector-line"></div>
+      <span class="connector-icon">×</span>
+      <div class="connector-line"></div>
+    </div>
+
+    <!-- MCP Section -->
+    <div class="mcp-section">
+      <div class="mcp-label">
+        <svg class="mcp-icon" fill="currentColor" fill-rule="evenodd" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.688 2.343a2.588 2.588 0 00-3.61 0l-9.626 9.44a.863.863 0 01-1.203 0 .823.823 0 010-1.18l9.626-9.44a4.313 4.313 0 016.016 0 4.116 4.116 0 011.204 3.54 4.3 4.3 0 013.609 1.18l.05.05a4.115 4.115 0 010 5.9l-8.706 8.537a.274.274 0 000 .393l1.788 1.754a.823.823 0 010 1.18.863.863 0 01-1.203 0l-1.788-1.753a1.92 1.92 0 010-2.754l8.706-8.538a2.47 2.47 0 000-3.54l-.05-.049a2.588 2.588 0 00-3.607-.003l-7.172 7.034-.002.002-.098.097a.863.863 0 01-1.204 0 .823.823 0 010-1.18l7.273-7.133a2.47 2.47 0 00-.003-3.537z"></path>
+          <path d="M14.485 4.703a.823.823 0 000-1.18.863.863 0 00-1.204 0l-7.119 6.982a4.115 4.115 0 000 5.9 4.314 4.314 0 006.016 0l7.12-6.982a.823.823 0 000-1.18.863.863 0 00-1.204 0l-7.119 6.982a2.588 2.588 0 01-3.61 0 2.47 2.47 0 010-3.54l7.12-6.982z"></path>
+        </svg>
+        <span class="mcp-text">MCP Server</span>
+        <span class="server-badge">v4.0</span>
+      </div>
+      <span class="subtitle">5,000+ datasets • 38 countries • Real-time SDMX API</span>
+    </div>
+  </div>
+</body>
+</html>
