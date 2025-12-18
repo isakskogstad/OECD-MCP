@@ -78,6 +78,9 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+// Serve static assets (banner, images, etc.)
+app.use('/assets', express.static(join(__dirname, '..', 'assets')));
+
 // Initialize OECD client - direct API calls only, no caching
 const client = new OECDClient();
 
