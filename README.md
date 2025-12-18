@@ -9,26 +9,46 @@
 [![MCP Protocol](https://img.shields.io/badge/MCP-2024--11--05-green)](https://modelcontextprotocol.io/)
 [![License](https://img.shields.io/badge/license-MIT-orange)](LICENSE)
 
+A [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server providing AI assistants access to **OECD's 5,000+ economic and statistical datasets via SDMX API**. By connecting to the MCP server, you can use AI to search, analyze, and compare data from 38 OECD countries across economy, health, education, environment, and more.
+
+<details>
+<summary>🇸🇪 Svenska</summary>
+
 En [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server som ger AI-assistenter tillgång till **OECD:s 5,000+ ekonomiska och statistiska dataset via SDMX API**. Genom att ansluta till MCP-servern kan du med hjälp av AI söka, analysera och jämföra data från 38 OECD-länder inom ekonomi, hälsa, utbildning, miljö och mer.
 
-*A [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server providing AI assistants access to **OECD's 5,000+ economic and statistical datasets via SDMX API**. By connecting to the MCP server, you can use AI to search, analyze, and compare data from 38 OECD countries across economy, health, education, environment, and more.*
+</details>
 
 ---
 
-## Snabbstart
-
-<details>
-<summary>🇬🇧 Quick start</summary>
+## Quick Start
 
 It's easy to connect an LLM / AI chatbot to the MCP server. Connect either directly to the hosted server (simple and convenient) or install locally. Below you'll find guides for different clients.
 
-**1. AI Chatbots (Web)**
+<details>
+<summary>🇸🇪 Snabbstart (Svenska)</summary>
 
-**ChatGPT:**
-1. Open settings and enable Developer Mode
-2. Create new connection with URL: `https://oecd-mcp.onrender.com/mcp`
+Det är enkelt att ansluta en LLM / AI-chatbot till MCP-servern. Anslut antingen direkt till den hostade servern (enkelt och smidigt) eller installera lokalt.
 
-**Claude:**
+</details>
+
+### 1. AI Chatbots (Web)
+
+<details>
+<summary><strong>ChatGPT</strong></summary>
+
+1. Open settings and enable **Developer Mode**
+2. Go to **Connectors** → **Add Connection**
+3. Enter URL: `https://oecd-mcp.onrender.com/mcp`
+4. Click **Connect**
+
+#### Video Guide
+![ChatGPT MCP connection](https://allgot.se/wp-content/uploads/users/1/ChatGPT-MCP-guide.gif)
+
+</details>
+
+<details>
+<summary><strong>Claude (Web)</strong></summary>
+
 1. Go to https://claude.ai and log in
 2. Click your profile (bottom left) → **Settings**
 3. Go to **Developer** or **Integrations**
@@ -36,139 +56,61 @@ It's easy to connect an LLM / AI chatbot to the MCP server. Connect either direc
 5. Name: `OECD`, URL: `https://oecd-mcp.onrender.com/mcp`
 6. Click **Connect**
 
-**2. Local Installation**
-
-**Claude Desktop:**
-```bash
-git clone https://github.com/isakskogstad/OECD-MCP.git
-cd OECD-MCP
-npm install && npm run build
-```
-Then add to Claude Desktop config (Settings → Developer → Edit Config).
-
-**Claude Code:**
-```bash
-claude mcp add --transport http oecd https://oecd-mcp.onrender.com/mcp
-```
-
-**OpenAI Codex:** Add to `~/.codex/config.toml`:
-```toml
-[mcp.oecd]
-url = "https://oecd-mcp.onrender.com/mcp"
-transport = "http"
-```
-
 </details>
 
-Det är enkelt att ansluta en LLM / AI-chatbot till MCP-servern. Anslut antingen direkt till den hostade servern (enkelt och smidigt) eller installera lokalt. Nedan finner du guider för olika klienter.
-
-
-
-<details>
-
-
-<summary><strong>1. AI-chatbotar</strong></summary>
-<details>
-
-<summary><strong>ChatGPT (Web)</strong></summary>
-
----
-
-1. Öppna inställningar och aktivera Developer Mode
-2. Skapa ny anslutning med URL: `https://oecd-mcp.onrender.com/mcp`
-
-#### Videoguide (tryck play)
-![ChatGPT anslutning till MCP](https://allgot.se/wp-content/uploads/users/1/ChatGPT-MCP-guide.gif)
-
-</details>
-
-<details>
-<summary><strong>Claude (Web)</strong></summary>
-
----
-
-**1. Gå till claude.ai:**
-- Logga in på https://claude.ai
-
-**2. Öppna inställningar:**
-- Klicka på din profil (nere till vänster)
-- Välj **"Settings"**
-
-**3. Lägg till MCP-server:**
-- Gå till **"Developer"** eller **"Integrations"**
-- Klicka **"Add MCP Server"** eller **"Connect"**
-- **Name:** `OECD`
-- **URL:** `https://oecd-mcp.onrender.com/mcp`
-- Klicka **"Connect"** eller **"Add"**
-
-#### Videoguide (tryck play)
-https://allgot.se/wp-content/uploads/users/1/Claude-Web-MCP-guide.mp4
-
----
-
-</details>
-
-</details>
 <img width="189" height="38" alt="claude chatgpt" src="https://allgot.se/wp-content/uploads/users/1/claude.chatgpt.png" />
 
 ---
 
-<details>
-
-
-<summary><strong>2. Lokal installation</strong></summary>
-
-
+### 2. Local Installation
 
 <details>
 <summary><strong>Claude Desktop</strong></summary>
 
-
-**1. Klona och bygg:**
+**1. Clone and build:**
 ```bash
 git clone https://github.com/isakskogstad/OECD-MCP.git
 cd OECD-MCP
 npm install && npm run build
 ```
 
-**2. I Claude Desktop:**
-- Settings → **Developer** (inte Connectors!)
-- Klicka **"Edit Config"**
+**2. In Claude Desktop:**
+- Settings → **Developer** (not Connectors!)
+- Click **"Edit Config"**
 
-**3. Lägg till i JSON-filen:**
+**3. Add to the JSON file:**
 ```json
 {
   "mcpServers": {
     "oecd": {
       "command": "node",
-      "args": ["/absolut/sökväg/till/OECD-MCP/dist/index.js"]
+      "args": ["/absolute/path/to/OECD-MCP/dist/index.js"]
     }
   }
 }
 ```
 
-**4. Spara och starta om Claude Desktop**
+**4. Save and restart Claude Desktop**
 
-**Notera:** Lokal installation använder stdio-transport via Developer-sektionen, inte Connectors.
+**Note:** Local installation uses stdio transport via the Developer section, not Connectors.
 
 </details>
 
 <details>
 <summary><strong>Claude Code</strong></summary>
 
-
-**Live-Server:**
+**Remote Server:**
 ```bash
 claude mcp add --transport http oecd https://oecd-mcp.onrender.com/mcp
 ```
 
-**Lokal (från källkod):**
+**Local (from source):**
 ```bash
-# Efter git clone och npm install (se ovan)
-claude mcp add oecd node /absolut/sökväg/till/dist/index.js
+# After git clone and npm install (see above)
+claude mcp add oecd node /absolute/path/to/dist/index.js
 ```
 
-**Verifiera:** `claude mcp list`
+**Verify:** `claude mcp list`
 
 </details>
 
@@ -184,22 +126,22 @@ url = "https://oecd-mcp.onrender.com/mcp"
 transport = "http"
 ```
 
-#### Lokal installation
+#### Local Installation
 
-**1. Klona och bygg (om ej redan gjort):**
+**1. Clone and build (if not already done):**
 ```bash
 git clone https://github.com/isakskogstad/OECD-MCP.git
 cd OECD-MCP
 npm install && npm run build
 ```
 
-**2. Konfigurera stdio-transport:**
+**2. Configure stdio transport:**
 
 **`~/.codex/config.toml`:**
 ```toml
 [mcp.oecd]
 command = "node"
-args = ["/absolut/sökväg/till/OECD-MCP/dist/index.js"]
+args = ["/absolute/path/to/OECD-MCP/dist/index.js"]
 transport = "stdio"
 ```
 
@@ -210,92 +152,66 @@ command = "node"
 args = ["C:\\Users\\username\\OECD-MCP\\dist\\index.js"]
 transport = "stdio"
 ```
-</details>
-</details>
 
+</details>
 
 <img width="273" height="46" alt="claudecode openaicodex googlegemini" src="https://allgot.se/wp-content/uploads/users/1/claudecode.openaicodex.googlegemini.png" />
 
-
-
 ---
 
-## Funktioner
-
-<details>
-<summary>🇬🇧 Features</summary>
+## Features
 
 The server connects to the OECD SDMX API providing access to 5,000+ datasets across 17 categories:
 
 **OECD SDMX API**
 Access to quarterly national accounts (QNA), main economic indicators (MEI), health statistics, education data, environmental indicators, and more from 38 OECD member countries plus partner economies.
 
-#### Tools
 The MCP server implements the MCP protocol with support for:
 - **9 tools** — Dataset discovery (5) and data access (4)
 - **7 resources** — Categories, countries, filter guide, glossary, LLM instructions
 - **7 prompt templates** — Economic analysis, country comparisons, Nordic focus
 
-</details>
+### Tools
 
-Servern kopplar till OECD SDMX API och ger tillgång till 5,000+ dataset inom 17 kategorier:
+| Tool | Description |
+|------|-------------|
+| `search_dataflows` | Search for datasets by keyword |
+| `list_dataflows` | List datasets by category |
+| `get_categories` | List all 17 data categories |
+| `get_popular_datasets` | Get commonly used datasets |
+| `search_indicators` | Search for specific indicators |
+| `get_data_structure` | Get metadata for a dataset |
+| `query_data` | Query statistical data |
+| `get_dataflow_url` | Generate OECD Data Explorer link |
+| `list_categories_detailed` | Detailed category information |
 
-**OECD SDMX API**
-Tillgång till kvartalsvisa nationalräkenskaper (QNA), huvudsakliga ekonomiska indikatorer (MEI), hälsostatistik, utbildningsdata, miljöindikatorer och mer från 38 OECD-medlemsländer plus partnerekonomier.
+### Resources
 
-#### Verktyg (tools)
-MCP-servern implementerar MCP-protokollet med stöd för:
-- **9 verktyg** — Dataset-sökning (5) och dataåtkomst (4)
-- **7 resurser** — Kategorier, länder, filterguide, ordlista, LLM-instruktioner
-- **7 promptmallar** — Ekonomisk analys, landsjämförelser, nordiskt fokus
+| Resource | Description |
+|----------|-------------|
+| `oecd://categories` | 17 data categories with descriptions |
+| `oecd://dataflows/popular` | Curated popular datasets |
+| `oecd://countries` | ISO 3166-1 alpha-3 country codes |
+| `oecd://filter-guide` | SDMX filter syntax guide |
+| `oecd://glossary` | Definitions of OECD terms |
+| `oecd://llm-instructions` | Instructions for AI assistants |
+| `oecd://api/info` | API information |
 
-### Verktyg
+### Prompt Templates
 
-| Verktyg | Beskrivning |
-|---------|-------------|
-| `search_dataflows` | Sök efter dataset med nyckelord |
-| `list_dataflows` | Lista dataset per kategori |
-| `get_categories` | Lista alla 17 datakategorier |
-| `get_popular_datasets` | Hämta vanliga dataset |
-| `search_indicators` | Sök specifika indikatorer |
-| `get_data_structure` | Hämta metadata för dataset |
-| `query_data` | Fråga statistiska data |
-| `get_dataflow_url` | Generera OECD Data Explorer-länk |
-| `list_categories_detailed` | Detaljerad kategoriinfo |
-
-### Resurser
-
-| Resurs | Beskrivning |
+| Prompt | Description |
 |--------|-------------|
-| `oecd://categories` | 17 datakategorier med beskrivningar |
-| `oecd://dataflows/popular` | Kurerade populära dataset |
-| `oecd://countries` | ISO 3166-1 alpha-3 landskoder |
-| `oecd://filter-guide` | SDMX filtersyntax-guide |
-| `oecd://glossary` | Definitioner av OECD-termer |
-| `oecd://llm-instructions` | Instruktioner för AI-assistenter |
-| `oecd://api/info` | API-information |
-
-### Promptmallar
-
-| Prompt | Beskrivning |
-|--------|-------------|
-| `analyze_economic_trend` | Analysera ekonomiska trender över tid |
-| `compare_countries` | Jämför data mellan länder |
-| `get_latest_statistics` | Hämta senaste statistik |
-| `explore_dataset` | Guidad utforskning av dataset |
-| `find_data_for_question` | Hitta rätt dataset för en fråga |
-| `build_filter` | Hjälp att bygga SDMX-filter |
-| `nordic_comparison` | Jämför nordiska länder |
-
-
+| `analyze_economic_trend` | Analyze economic trends over time |
+| `compare_countries` | Compare data between countries |
+| `get_latest_statistics` | Get latest statistics |
+| `explore_dataset` | Guided dataset exploration |
+| `find_data_for_question` | Find the right dataset for a question |
+| `build_filter` | Help building SDMX filters |
+| `nordic_comparison` | Compare Nordic countries |
 
 ---
 
-
-## Användningsområden
-
-<details>
-<summary>🇬🇧 Use cases</summary>
+## Use Cases
 
 ### Economists & Researchers
 
@@ -340,87 +256,38 @@ MCP-servern implementerar MCP-protokollet med stöd för:
 - "Find income inequality data (Gini coefficient)"
 - "Compare tax revenues as % of GDP"
 
-</details>
-
-
-### Ekonomer & Forskare
-
-| Verktyg | Beskrivning |
-|---------|-------------|
-| `query_data` | Fråga BNP, inflation, arbetslöshetsdata |
-| `search_dataflows` | Hitta dataset för forskningsfrågor |
-| `get_data_structure` | Förstå dataset-dimensioner |
-
-**Exempel:**
-- "Jämför BNP-tillväxt mellan G7-länder 2020-2024"
-- "Analysera inflationstrender i euroområdet"
-- "Hitta data om arbetsproduktivitet per sektor"
-
 ---
 
-### Policyanalytiker
-
-| Verktyg | Beskrivning |
-|---------|-------------|
-| `get_categories` | Bläddra i 17 policyområden |
-| `list_dataflows` | Hitta relevanta policydataset |
-| `get_dataflow_url` | Generera länkar för rapporter |
-
-**Exempel:**
-- "Vilken data finns om sjukvårdsutgifter för Sverige?"
-- "Hitta utbildningsindikatorer för PISA-analys"
-- "Jämför miljöpolicyer mellan nordiska länder"
-
----
-
-### Datajournalister
-
-| Verktyg | Beskrivning |
-|---------|-------------|
-| `search_indicators` | Hitta specifika mätvärden |
-| `get_popular_datasets` | Få tillgång till ofta citerad data |
-| `query_data` | Hämta siffror för artiklar |
-
-**Exempel:**
-- "Hämta senaste arbetslöshetssiffror för EU-länder"
-- "Hitta data om inkomstojämlikhet (Gini-koefficient)"
-- "Jämför skatteintäkter som % av BNP"
-
----
-
-### Datakategorier
+### Data Categories
 
 <details>
-<summary>Visa alla 17 kategorier</summary>
+<summary>View all 17 categories</summary>
 
-| Kategori | Kod | Beskrivning | Dataset |
-|----------|-----|-------------|---------|
-| **Ekonomi** | ECO | BNP, tillväxt, inflation, räntor | 500+ |
-| **Sysselsättning** | JOB | Arbetsmarknad, löner | 300+ |
-| **Handel** | TRD | Internationell handel | 250+ |
-| **Hälsa** | HEA | Sjukvård, livslängd | 200+ |
-| **Utbildning** | EDU | PISA, resultat | 180+ |
-| **Miljö** | ENV | Klimat, utsläpp | 150+ |
-| **Innovation** | STI | FoU, patent, AI | 140+ |
-| **Energi** | NRG | Produktion, förnybart | 120+ |
-| **Beskattning** | TAX | Skatteintäkter, skattesatser | 100+ |
-| **Finans** | FIN | Marknader, bankväsende | 95+ |
-| **Offentlig sektor** | GOV | Styrning, offentlig sektor | 90+ |
-| **Socialt** | SOC | Ojämlikhet, livskvalitet | 85+ |
-| **Jordbruk** | AGR | Produktion, matsäkerhet | 75+ |
-| **Industri** | IND | Industriproduktion | 70+ |
-| **Utveckling** | DEV | Utvecklingsbistånd | 60+ |
-| **Transport** | TRA | Infrastruktur, mobilitet | 50+ |
-| **Regional** | REG | Subnationell data | 45+ |
+| Category | Code | Description | Datasets |
+|----------|------|-------------|----------|
+| **Economy** | ECO | GDP, growth, inflation, interest rates | 500+ |
+| **Employment** | JOB | Labor market, wages | 300+ |
+| **Trade** | TRD | International trade | 250+ |
+| **Health** | HEA | Healthcare, life expectancy | 200+ |
+| **Education** | EDU | PISA, outcomes | 180+ |
+| **Environment** | ENV | Climate, emissions | 150+ |
+| **Innovation** | STI | R&D, patents, AI | 140+ |
+| **Energy** | NRG | Production, renewables | 120+ |
+| **Taxation** | TAX | Tax revenues, tax rates | 100+ |
+| **Finance** | FIN | Markets, banking | 95+ |
+| **Government** | GOV | Governance, public sector | 90+ |
+| **Social** | SOC | Inequality, quality of life | 85+ |
+| **Agriculture** | AGR | Production, food security | 75+ |
+| **Industry** | IND | Industrial production | 70+ |
+| **Development** | DEV | Development aid | 60+ |
+| **Transport** | TRA | Infrastructure, mobility | 50+ |
+| **Regional** | REG | Subnational data | 45+ |
 
 </details>
 
 ---
 
-## Övrigt
-
-<details>
-<summary>🇬🇧 About</summary>
+## About
 
 **Created by:** [Isak Skogstad](https://www.linkedin.com/in/isak-skogstad/)
 
@@ -430,19 +297,9 @@ MCP-servern implementerar MCP-protokollet med stöd för:
 
 **Terms of use:** Data is provided via OECD's open SDMX API. See [OECD Terms and Conditions](https://www.oecd.org/termsandconditions/) for usage conditions.
 
-</details>
-
-**Skapad av:** [Isak Skogstad](https://www.linkedin.com/in/isak-skogstad/)
-
-**Kontakt:** [isak.skogstad@me.com](mailto:isak.skogstad@me.com)
-
-**Fristående:** Detta projekt är fristående och är inte anslutet till, godkänt av eller officiellt kopplat till OECD (Organisation for Economic Co-operation and Development).
-
-**Användarvillkor:** Data tillhandahålls via OECD:s öppna SDMX API. Se [OECD:s användarvillkor](https://www.oecd.org/termsandconditions/) för användningsvillkor.
-
 ---
 
-## Resurser
+## Resources
 
 - **OECD Data Portal:** https://data.oecd.org/
 - **SDMX Standard:** https://sdmx.org/
@@ -452,4 +309,4 @@ MCP-servern implementerar MCP-protokollet med stöd för:
 
 ---
 
-**Byggd med** [Model Context Protocol SDK](https://github.com/modelcontextprotocol) | **Version** 4.0.0
+**Built with** [Model Context Protocol SDK](https://github.com/modelcontextprotocol) | **Version** 4.0.0
