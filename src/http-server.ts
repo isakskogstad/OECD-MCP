@@ -38,7 +38,7 @@ marked.setOptions({
  * Sanitize error messages to prevent information leakage
  * Only allow known safe error patterns through
  */
-function sanitizeErrorMessage(message: string): string {
+export function sanitizeErrorMessage(message: string): string {
   // Known safe error patterns from our code
   const safePatterns = [
     /^Unknown dataflow:/,
@@ -51,6 +51,7 @@ function sanitizeErrorMessage(message: string): string {
     /^Unknown method:/,
     /^Method is required$/,
     /^Validation error:/,
+    /^\{"error":"OECD API request failed"/, // JSON error format with detailed suggestions
   ];
 
   // Check if message matches a safe pattern

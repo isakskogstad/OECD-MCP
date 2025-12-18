@@ -196,7 +196,8 @@ export class OECDSDMXClient {
       });
 
       if (!response.ok) {
-        throw new Error(`OECD API request failed with status ${response.status}`);
+        const errorDetails = this.createDetailedError(response.status, dataflowId, filter);
+        throw new Error(JSON.stringify(errorDetails));
       }
 
       const data = await response.json();
@@ -234,6 +235,106 @@ export class OECDSDMXClient {
       return `${baseUrl}?df=${dataflowId}&dq=${filter}`;
     }
     return `${baseUrl}?df=${dataflowId}`;
+  }
+
+  // ========== PRIVATE ERROR HANDLING METHODS ==========
+
+  /**
+   * Create detailed error message with suggestions for common HTTP errors
+   */
+  private createDetailedError(statusCode: number, dataflowId: string, filter: string): object {
+    const baseError = {
+      error: `OECD API request failed`,
+      statusCode,
+      dataflowId,
+      providedFilter: filter,
+    };
+
+    switch (statusCode) {
+      case 400:
+        return {
+          ...baseError,
+          message: 'Bad request - the query syntax is invalid',
+          suggestions: [
+            'Check that the dataflow_id is correct',
+            'Verify the filter syntax follows SDMX format: DIM1.DIM2.DIM3',
+            'Use dots (.) to separate dimensions, empty position means all values',
+          ],
+          example: `query_data({dataflow_id: "${dataflowId}", last_n_observations: 10})`,
+        };
+
+      case 404:
+        return {
+          ...baseError,
+          message: 'Dataset or filter combination not found',
+          suggestions: [
+            `Verify "${dataflowId}" exists using search_dataflows or list_dataflows`,
+            'Check that the filter values exist in the dataset',
+            'Try querying without filter first to see available data',
+          ],
+          example: `search_dataflows({query: "${dataflowId}"})`,
+        };
+
+      case 422:
+        return {
+          ...baseError,
+          message: 'Invalid filter format or dimension values',
+          cause: 'The filter structure does not match the dataset dimensions, or the dimension values do not exist',
+          suggestions: [
+            '1. Use get_data_structure to see the dimension order for this dataset',
+            '2. Ensure filter matches the exact dimension order',
+            '3. Use valid country codes (ISO 3166-1 alpha-3): SWE, USA, DEU, etc.',
+            '4. For multiple countries use + separator: SWE+NOR+DNK',
+            '5. Empty position (..) means all values for that dimension',
+            '6. Try a simpler query first with just last_n_observations',
+          ],
+          filterSyntax: {
+            format: 'DIM1.DIM2.DIM3.DIM4',
+            example: 'SWE.B1_GE..',
+            multipleValues: 'SWE+NOR+DNK.B1_GE..',
+            allValues: 'Use empty position (..) or omit trailing dimensions',
+          },
+          recommendedFirstStep: `get_data_structure({dataflow_id: "${dataflowId}"})`,
+          simpleQueryExample: `query_data({dataflow_id: "${dataflowId}", last_n_observations: 10})`,
+        };
+
+      case 429:
+        return {
+          ...baseError,
+          message: 'Rate limit exceeded - too many requests',
+          suggestions: [
+            'Wait a few seconds before retrying',
+            'Reduce the frequency of API calls',
+            'The server automatically enforces rate limiting between requests',
+          ],
+          retryAfter: '5 seconds',
+        };
+
+      case 500:
+      case 502:
+      case 503:
+        return {
+          ...baseError,
+          message: 'OECD server error - temporary issue',
+          suggestions: [
+            'This is a server-side issue, not a problem with your query',
+            'Wait a moment and try again',
+            'If the problem persists, the OECD API may be under maintenance',
+          ],
+          checkStatus: 'https://data.oecd.org/',
+        };
+
+      default:
+        return {
+          ...baseError,
+          message: `Unexpected error from OECD API`,
+          suggestions: [
+            'Check your query parameters',
+            'Verify the dataflow_id exists',
+            'Try a simpler query first',
+          ],
+        };
+    }
   }
 
   // ========== PRIVATE PARSING METHODS ==========
