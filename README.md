@@ -1,6 +1,7 @@
 <p align="center">
-  <img width="700" height="220" alt="OECD MCP Server banner" src="https://raw.githubusercontent.com/isakskogstad/OECD-MCP/main/assets/banner.svg" />
+ <img width="640" height="320" alt="OECD MCP Server banner" src="https://github.com/user-attachments/assets/25c886ab-4857-4960-be26-dd250f3155b0" />
 </p>
+
 
 # OECD MCP Server
 
