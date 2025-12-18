@@ -5,10 +5,15 @@
 
 import express from 'express';
 import cors from 'cors';
+import { createRequire } from 'module';
 import { readFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { marked } from 'marked';
+
+// Import version from package.json (ES module compatible)
+const require = createRequire(import.meta.url);
+const { version: SERVER_VERSION } = require('../package.json');
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { SSEServerTransport } from '@modelcontextprotocol/sdk/server/sse.js';
 import {
@@ -23,6 +28,7 @@ import { OECDClient } from './oecd-client.js';
 import { TOOL_DEFINITIONS, executeTool } from './tools.js';
 import { RESOURCE_DEFINITIONS, readResource } from './resources.js';
 import { PROMPT_DEFINITIONS, getPrompt } from './prompts.js';
+import { SERVER_ICON } from './constants.js';
 
 // Get __dirname equivalent in ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -82,7 +88,7 @@ function createMCPServer(): Server {
   const server = new Server(
     {
       name: 'oecd-mcp-server',
-      version: '4.0.0',
+      version: SERVER_VERSION,
     },
     {
       capabilities: {
@@ -206,7 +212,7 @@ app.get('/health', (_req, res) => {
   res.json({
     status: 'healthy',
     service: 'oecd-mcp-server',
-    version: '4.0.0',
+    version: SERVER_VERSION,
     timestamp: new Date().toISOString(),
   });
 });
@@ -228,7 +234,7 @@ app.get('/mcp', (req, res) => {
   // Otherwise, return info page
   res.json({
     service: 'oecd-mcp-server',
-    version: '4.0.0',
+    version: SERVER_VERSION,
     description: 'Model Context Protocol server for OECD statistical data',
     status: 'operational',
     usage: {
@@ -333,7 +339,14 @@ app.post('/mcp', async (req, res) => {
         },
         serverInfo: {
           name: 'oecd-mcp-server',
-          version: '4.0.0',
+          version: SERVER_VERSION,
+          icons: [
+            {
+              src: SERVER_ICON,
+              mimeType: 'image/png',
+              sizes: ['512x512'],
+            }
+          ],
           description: 'Model Context Protocol server for OECD statistical data via SDMX API'
         },
       };

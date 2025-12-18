@@ -35,48 +35,48 @@ export interface IndicatorSearch {
 }
 
 // OECD Data Categories
-// NOTE: exampleDatasets ONLY includes actually implemented dataflows (see known-dataflows.ts)
+// NOTE: exampleDatasets includes all implemented dataflows (see known-dataflows.ts)
 export const OECD_CATEGORIES: OECDCategory[] = [
   {
     id: 'ECO',
     name: 'Economy',
-    description: 'GDP, growth, inflation, interest rates, economic forecasts',
-    exampleDatasets: ['QNA', 'MEI'], // Quarterly National Accounts, Main Economic Indicators
+    description: 'GDP, growth, inflation, interest rates, productivity, economic forecasts',
+    exampleDatasets: ['QNA', 'MEI', 'PDB_LV'], // Quarterly National Accounts, Main Economic Indicators, Productivity
   },
   {
     id: 'HEA',
     name: 'Health',
-    description: 'Healthcare spending, life expectancy, health outcomes',
-    exampleDatasets: ['HEALTH_STAT'], // Health Statistics - Perceived Health Status
+    description: 'Healthcare spending, life expectancy, health outcomes, hospital resources',
+    exampleDatasets: ['HEALTH_STAT', 'SHA', 'HEALTH_REAC'], // Perceived Health, System of Health Accounts, Acute Care Beds
   },
   {
     id: 'EDU',
     name: 'Education',
-    description: 'PISA results, education spending, educational attainment',
-    exampleDatasets: ['EAG_FIN'], // Education at a Glance - Financial Indicators
+    description: 'Education spending, educational attainment, graduation rates',
+    exampleDatasets: ['EAG_FIN', 'EAG_NEAC', 'EAG_GRAD_ENTR_RATE'], // Finance, Attainment, Graduation Rates
   },
   {
     id: 'ENV',
     name: 'Environment',
     description: 'Climate, emissions, pollution, green growth, biodiversity',
-    exampleDatasets: ['DF_LAND_TEMP', 'DF_HEAT_STRESS', 'DF_COASTAL_FLOOD', 'DF_RIVER_FLOOD', 'DF_DROUGHT', 'DF_FIRES', 'DF_PRECIP', 'DF_CLIM_PROJ', 'GREEN_GROWTH'], // Climate indicators for cities + Green Growth
+    exampleDatasets: ['DF_LAND_TEMP', 'DF_HEAT_STRESS', 'DF_COASTAL_FLOOD', 'DF_RIVER_FLOOD', 'DF_DROUGHT', 'DF_FIRES', 'DF_PRECIP', 'DF_CLIM_PROJ', 'GREEN_GROWTH'],
   },
   {
     id: 'TRD',
     name: 'Trade',
-    description: 'International trade, imports, exports, trade agreements',
-    exampleDatasets: ['TIS'], // Trade in Services
+    description: 'International trade, imports, exports, trade in value added',
+    exampleDatasets: ['TIS', 'TISP', 'TIVA'], // Trade in Services, by Partner, Value Added
   },
   {
     id: 'JOB',
     name: 'Employment',
-    description: 'Labour market, unemployment, wages, working conditions',
-    exampleDatasets: ['AVD_DUR'], // Unemployment by Duration
+    description: 'Labour market, unemployment, wages, working hours',
+    exampleDatasets: ['AVD_DUR', 'LFS_SEXAGE_I_R', 'ANHRS'], // Unemployment Duration, Labour Force Stats, Hours Worked
   },
   {
     id: 'NRG',
     name: 'Energy',
-    description: 'Energy production, consumption, renewables, energy prices',
+    description: 'Energy production, consumption, renewables, natural resources',
     exampleDatasets: ['NAT_RES'],
   },
   {
@@ -89,7 +89,7 @@ export const OECD_CATEGORIES: OECDCategory[] = [
     id: 'GOV',
     name: 'Government',
     description: 'Public sector, governance, trust in government, e-government',
-    exampleDatasets: ['GOV_2023', 'SNA_TABLE11', 'GGDP'], // Government at a Glance, Expenditure by Function, Debt-to-GDP
+    exampleDatasets: ['GOV_2023'],
   },
   {
     id: 'SOC',
@@ -106,38 +106,50 @@ export const OECD_CATEGORIES: OECDCategory[] = [
   {
     id: 'STI',
     name: 'Innovation and Technology',
-    description: 'R&D spending, patents, digital economy, artificial intelligence',
+    description: 'R&D spending, patents, digital economy, ICT usage',
     exampleDatasets: ['MSTI', 'PAT_DEV', 'ICT_IND'],
   },
   {
     id: 'TAX',
     name: 'Taxation',
     description: 'Tax revenues, tax rates, tax policy',
-    exampleDatasets: ['REV', 'CTS_CIT', 'CTS_PIT'],
+    exampleDatasets: [], // Not yet implemented
   },
   {
     id: 'FIN',
     name: 'Finance',
-    description: 'Financial markets, banking, insurance, pensions',
-    exampleDatasets: ['FDI'], // Foreign Direct Investment
+    description: 'Financial markets, banking, foreign direct investment',
+    exampleDatasets: ['FDI'],
   },
   {
     id: 'TRA',
     name: 'Transport',
     description: 'Infrastructure, mobility, freight, passenger transport',
-    exampleDatasets: ['ITF_GOODS', 'ITF_PASSENGER', 'ITF_INV'],
+    exampleDatasets: [], // Not yet implemented
   },
   {
     id: 'IND',
     name: 'Industry and Services',
-    description: 'Industrial production, services sector, productivity',
-    exampleDatasets: ['PDB_LV', 'SNA_TABLE6A', 'STAN08BIS'],
+    description: 'Industrial production, services sector',
+    exampleDatasets: [], // Not yet implemented
   },
   {
     id: 'REG',
     name: 'Regional Statistics',
     description: 'Sub-national data, cities, regions, territorial indicators',
-    exampleDatasets: ['REGION_DEMOGR', 'REGION_ECONOM', 'REGION_INNOV'],
+    exampleDatasets: ['REGION_ECONOM', 'REGION_LABOUR'],
+  },
+  {
+    id: 'HOU',
+    name: 'Housing',
+    description: 'House prices, property markets, housing affordability',
+    exampleDatasets: ['HPI', 'RPPI'], // House Price Index, Real Property Price Indicators
+  },
+  {
+    id: 'MIG',
+    name: 'Migration',
+    description: 'International migration flows, immigration statistics, asylum seekers',
+    exampleDatasets: ['MIG'], // International Migration Database
   },
 ];
 

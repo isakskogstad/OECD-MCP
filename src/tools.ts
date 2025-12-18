@@ -53,7 +53,7 @@ export const TOOL_DEFINITIONS = [
         category: {
           type: 'string',
           description:
-            'Optional category filter: ECO, HEA, EDU, ENV, TRD, JOB, NRG, AGR, GOV, SOC, DEV, STI, TAX, FIN, TRA, IND, REG',
+            'Optional category filter: ECO, HEA, EDU, ENV, TRD, JOB, NRG, AGR, GOV, SOC, DEV, STI, TAX, FIN, TRA, IND, REG, HOU, MIG',
         },
         limit: {
           type: 'number',
@@ -169,7 +169,7 @@ export const TOOL_DEFINITIONS = [
   {
     name: 'list_categories_detailed',
     description:
-      'Get all OECD data categories with example datasets for each category. Returns comprehensive information about all 17 categories.',
+      'Get all OECD data categories with example datasets for each category. Returns comprehensive information about all 19 categories.',
     inputSchema: {
       type: 'object',
       properties: {},

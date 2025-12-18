@@ -4,7 +4,7 @@
  * Base URL: https://sdmx.oecd.org/public/rest/
  */
 
-import fetch from 'node-fetch';
+import fetch, { Response, RequestInit } from 'node-fetch';
 import { KNOWN_DATAFLOWS, toSDMXDataflow, getDataflowById, searchDataflows as searchKnownDataflows } from './known-dataflows.js';
 
 export const OECD_SDMX_BASE = 'https://sdmx.oecd.org/public/rest';
@@ -48,6 +48,8 @@ export class OECDSDMXClient {
   private lastRequestTime: number = 0;
   private readonly MIN_REQUEST_INTERVAL_MS = 1500; // 1.5 seconds between requests to avoid rate limiting
   private readonly REQUEST_TIMEOUT_MS = 30000; // 30 second timeout for API requests
+  private readonly MAX_RETRIES = 3; // Maximum retry attempts for transient errors
+  private readonly INITIAL_RETRY_DELAY_MS = 1000; // Initial delay before first retry
   private requestQueue: Promise<void> = Promise.resolve(); // Queue for rate limiting
 
   constructor(baseUrl: string = OECD_SDMX_BASE, agency: string = OECD_AGENCY) {
@@ -76,6 +78,98 @@ export class OECDSDMXClient {
     });
 
     return this.requestQueue;
+  }
+
+  /**
+   * Check if an error is retryable (network/TLS errors or server errors)
+   */
+  private isRetryableError(error: unknown): boolean {
+    if (error instanceof Error) {
+      const message = error.message.toLowerCase();
+      const retryablePatterns = [
+        'econnreset',
+        'etimedout',
+        'econnrefused',
+        'enotfound',
+        'socket hang up',
+        'network',
+        'tls',
+        'ssl',
+        'certificate',
+        'getaddrinfo',
+        'dns',
+      ];
+      return retryablePatterns.some(pattern => message.includes(pattern));
+    }
+    return false;
+  }
+
+  /**
+   * Fetch with retry logic for handling transient network/TLS errors
+   * Uses exponential backoff for retries
+   */
+  private async fetchWithRetry(
+    url: string,
+    options: RequestInit,
+    context: { dataflowId: string; operation: string }
+  ): Promise<Response> {
+    let lastError: Error | null = null;
+
+    for (let attempt = 0; attempt <= this.MAX_RETRIES; attempt++) {
+      // Enforce rate limiting before each attempt
+      await this.enforceRateLimit();
+
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), this.REQUEST_TIMEOUT_MS);
+
+      try {
+        const response = await fetch(url, {
+          ...options,
+          signal: controller.signal,
+        });
+
+        clearTimeout(timeoutId);
+
+        // Retry on server errors (5xx)
+        if (response.status >= 500 && attempt < this.MAX_RETRIES) {
+          const delay = this.INITIAL_RETRY_DELAY_MS * Math.pow(2, attempt);
+          console.warn(`⚠️  Server error ${response.status} for ${context.operation} (${context.dataflowId}), retrying in ${delay}ms (attempt ${attempt + 1}/${this.MAX_RETRIES})`);
+          await new Promise(resolve => setTimeout(resolve, delay));
+          continue;
+        }
+
+        return response;
+      } catch (error) {
+        clearTimeout(timeoutId);
+
+        // Handle timeout
+        if (error instanceof Error && error.name === 'AbortError') {
+          lastError = new Error(`OECD API request timed out after ${this.REQUEST_TIMEOUT_MS / 1000} seconds`);
+          if (attempt < this.MAX_RETRIES) {
+            const delay = this.INITIAL_RETRY_DELAY_MS * Math.pow(2, attempt);
+            console.warn(`⚠️  Request timeout for ${context.operation} (${context.dataflowId}), retrying in ${delay}ms (attempt ${attempt + 1}/${this.MAX_RETRIES})`);
+            await new Promise(resolve => setTimeout(resolve, delay));
+            continue;
+          }
+          break;
+        }
+
+        // Handle retryable network/TLS errors
+        if (this.isRetryableError(error) && attempt < this.MAX_RETRIES) {
+          const delay = this.INITIAL_RETRY_DELAY_MS * Math.pow(2, attempt);
+          console.warn(`⚠️  Network error for ${context.operation} (${context.dataflowId}): ${error instanceof Error ? error.message : 'Unknown'}, retrying in ${delay}ms (attempt ${attempt + 1}/${this.MAX_RETRIES})`);
+          lastError = error instanceof Error ? error : new Error(String(error));
+          await new Promise(resolve => setTimeout(resolve, delay));
+          continue;
+        }
+
+        // Non-retryable error
+        throw error;
+      }
+    }
+
+    // All retries exhausted
+    throw lastError || new Error(`Failed after ${this.MAX_RETRIES} retries`);
   }
 
   /**
@@ -110,11 +204,8 @@ export class OECDSDMXClient {
       throw new Error(`Unknown dataflow: ${dataflowId}. Use listDataflows() to see available dataflows.`);
     }
 
-    // Try to fetch real structure from OECD API
+    // Try to fetch real structure from OECD API with retry logic
     try {
-      // Enforce rate limiting
-      await this.enforceRateLimit();
-
       // Query for a small sample of data to get structure metadata
       const params = new URLSearchParams({
         format: 'jsondata',
@@ -123,24 +214,18 @@ export class OECDSDMXClient {
 
       const url = `${this.baseUrl}/data/${knownDf.agency},${knownDf.fullId}/all?${params.toString()}`;
 
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), this.REQUEST_TIMEOUT_MS);
+      const response = await this.fetchWithRetry(
+        url,
+        { headers: { Accept: 'application/json' } },
+        { dataflowId, operation: 'getDataStructure' }
+      );
 
-      try {
-        const response = await fetch(url, {
-          headers: { Accept: 'application/json' },
-          signal: controller.signal,
-        });
-
-        if (!response.ok) {
-          throw new Error(`Failed to fetch structure: ${response.status}`);
-        }
-
-        const data = await response.json();
-        return this.parseDataStructure(dataflowId, data);
-      } finally {
-        clearTimeout(timeoutId);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch structure: ${response.status}`);
       }
+
+      const data = await response.json();
+      return this.parseDataStructure(dataflowId, data);
     } catch (error) {
       // Fallback to basic structure if API call fails
       console.warn(`Failed to fetch structure for ${dataflowId}, using fallback:`, error);
@@ -293,41 +378,25 @@ export class OECDSDMXClient {
     // NOTE: Version parameter omitted - OECD SDMX API doesn't require/accept it for most dataflows
     const url = `${this.baseUrl}/data/${knownDf.agency},${knownDf.fullId}/${sanitizedFilter}?${params.toString()}`;
 
-    // Enforce rate limiting BEFORE making the API request
-    await this.enforceRateLimit();
+    // Use fetchWithRetry for automatic retry on transient errors
+    const response = await this.fetchWithRetry(
+      url,
+      { headers: { Accept: 'application/json' } },
+      { dataflowId, operation: 'queryData' }
+    );
 
-    // Create AbortController for timeout
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), this.REQUEST_TIMEOUT_MS);
-
-    try {
-      const response = await fetch(url, {
-        headers: {
-          Accept: 'application/json',
-        },
-        signal: controller.signal,
-      });
-
-      if (!response.ok) {
-        const errorDetails = this.createDetailedError(response.status, dataflowId, filter);
-        throw new Error(JSON.stringify(errorDetails));
-      }
-
-      const data = await response.json();
-
-      // Parse observations with client-side limit as backup
-      // OECD API sometimes ignores lastNObservations for large datasets
-      const observations = this.parseDataObservations(data, options.lastNObservations);
-
-      return observations;
-    } catch (error) {
-      if (error instanceof Error && error.name === 'AbortError') {
-        throw new Error(`OECD API request timed out after ${this.REQUEST_TIMEOUT_MS / 1000} seconds`);
-      }
-      throw error;
-    } finally {
-      clearTimeout(timeoutId);
+    if (!response.ok) {
+      const errorDetails = this.createDetailedError(response.status, dataflowId, filter);
+      throw new Error(JSON.stringify(errorDetails));
     }
+
+    const data = await response.json();
+
+    // Parse observations with client-side limit as backup
+    // OECD API sometimes ignores lastNObservations for large datasets
+    const observations = this.parseDataObservations(data, options.lastNObservations);
+
+    return observations;
   }
 
   /**

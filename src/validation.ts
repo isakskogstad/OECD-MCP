@@ -22,7 +22,8 @@ export const SearchDataflowsSchema = z.object({
 export const ListDataflowsSchema = z.object({
   category: z.enum([
     'ECO', 'HEA', 'EDU', 'ENV', 'TRD', 'JOB', 'NRG', 'AGR',
-    'GOV', 'SOC', 'DEV', 'STI', 'TAX', 'FIN', 'TRA', 'IND', 'REG'
+    'GOV', 'SOC', 'DEV', 'STI', 'TAX', 'FIN', 'TRA', 'IND', 'REG',
+    'HOU', 'MIG'
   ]).optional(),
   limit: z.number()
     .int('Limit must be an integer')
@@ -66,7 +67,8 @@ export const SearchIndicatorsSchema = z.object({
     .max(100, 'Indicator search term must not exceed 100 characters'),
   category: z.enum([
     'ECO', 'HEA', 'EDU', 'ENV', 'TRD', 'JOB', 'NRG', 'AGR',
-    'GOV', 'SOC', 'DEV', 'STI', 'TAX', 'FIN', 'TRA', 'IND', 'REG'
+    'GOV', 'SOC', 'DEV', 'STI', 'TAX', 'FIN', 'TRA', 'IND', 'REG',
+    'HOU', 'MIG'
   ]).optional(),
 });
 
