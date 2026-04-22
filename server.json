@@ -9,14 +9,15 @@
     "url": "https://github.com/isakskogstad/OECD-MCP",
     "source": "github"
   },
-  "remotes": [
+  "packages": [
     {
-      "type": "streamable-http",
-      "url": "https://oecd-mcp-server.onrender.com/mcp"
-    },
-    {
-      "type": "sse",
-      "url": "https://oecd-mcp-server.onrender.com/sse"
+      "registryType": "npm",
+      "identifier": "oecd-mcp",
+      "version": "4.0.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "runtimeHint": "npx"
     }
   ]
 }
